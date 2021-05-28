@@ -8,7 +8,7 @@ from wordcloud import WordCloud
 stop_words = set(stopwords.words('spanish'))
 problematic_words = ['t', 'si', 'q']
 
-def wordcloud_tweets(df, file_name):
+def wordcloud_tweets(df, file_name = '', save = True):
     """Create a wordcloud from a collection of tweets. For this purpose we put all the tweets together
 
     Args:
@@ -32,9 +32,9 @@ def wordcloud_tweets(df, file_name):
     final_data = ' '.join(final_data)
     # Wordcloud process.
     wordcloud = WordCloud(width=1600, height=800, max_font_size=200, background_color="black").generate(final_data)
-    plt.figure(figsize=(12,10))
+    #plt.figure(figsize=(12,10))
     plt.imshow(wordcloud)
     plt.axis("off")
-    plt.savefig(file_name)
+    if save: plt.savefig('imgs/' + file_name + '.png')
     plt.show()
 

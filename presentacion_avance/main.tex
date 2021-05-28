@@ -1,0 +1,65 @@
+\documentclass{beamer}
+\input{setup}
+%\usetheme{Darmstadt default}
+\usetheme{Copenhagen}
+%\usetheme{Madrid}
+%\usecolortheme{beaver}
+\usecolortheme{seahorse}
+\usefonttheme[onlymath]{serif}
+\usefonttheme{structuresmallcapsserif}
+
+\title[Análisis de Datos: Twitter]{Análisis de Datos: Twitter}
+\author{Javier Castro M.}
+\institute{Universidad De Chile}
+\date{\today}
+
+%exponer sus objetivos, descripción de la base de datos y de los métodos a aplicar
+
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{frame}{Objetivos}
+		\textbf{Motivación}: El principio del proyecto es entender cómo los datos impactan en el resultado de nuestro modelo. O bien, entender que los posibles sesgos que presenten nuestros datos se traspasaran a los resultados.
+	\end{frame}
+
+	\begin{frame}{Twint: \textbf{Tw}itter \textbf{In}telligence \textbf{T}ool}
+		Desde el \textbf{github} de \textbf{twint}: \\
+		\vspace{1cm}
+		\comillas{Twint is an advanced Twitter scraping tool written in Python that allows for scraping Tweets from Twitter profiles without using Twitter's API.}
+	\end{frame}
+
+	\begin{frame}{Twitter en el estallido social}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale=.5]{../imgs/wordcloud_santiago_estallido1.png}
+			\caption{Wordcloud de twitter el $18$ de octubre del $2019$ con coordenadas en Beaucheff y un radio de $10km$.}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}{Twitter en el día de la mujer}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale=.5]{../imgs/wordcloud_santiago_8M.png}
+			\caption{Wordcloud de twitter el $8$ de marzo del $2020$ con coordenadas en Beaucheff y un radio de $10km$.}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}{Twitter en las votaciones pasadas}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale=.5]{../imgs/wordcloud_chile_votaciones.png}
+			\caption{Wordcloud de twitter durante las votaciones del $15$ y $16$ de mayo del $2021$ usando \texttt{.Near = "Santiago, Chile"}.}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}{Fin}
+		\centering
+		\mybox{Muchas Gracias!}
+	\end{frame}
+
+	
+	
+	
+\end{document}
