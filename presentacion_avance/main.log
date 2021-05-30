@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.21)  27 MAY 2021 19:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.21)  29 MAY 2021 17:58
 entering extended mode
 **./main.tex
 (main.tex
@@ -1079,7 +1079,39 @@ File: pgfmodulematrix.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 (C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-))))
+)))
+(C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+
+(C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen316
+\captionmargin@=\dimen317
+\captionwidth=\dimen318
+\caption@tempdima=\dimen319
+\caption@indent=\dimen320
+\caption@parindent=\dimen321
+\caption@hangindent=\dimen322
+Package caption Info: beamer document class detected.
+
+(C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption-beamer.
+sto
+File: caption-beamer.sto 2020/08/22 v2.0 Adaption of the caption package to the
+ beamer document classes (AR)
+))
+\c@caption@flags=\count347
+\c@continuedfloat=\count348
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: Hyperref support is turned off
+(caption)             because hyperref has stopped early.
+Package caption Info: wrapfig package is loaded.
+)
+(C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
+Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
+\c@subfigure=\count349
+\c@subtable=\count350
+))
 (C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerthemeCopen
 hagen.sty
 (C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beameroutertheme
@@ -1099,7 +1131,7 @@ tructuresmallcapsserif.sty)
 (C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count347
+\l__color_backend_stack_int=\count351
 \l__pdf_internal_box=\box97
 ) (main.aux)
 \openout1 = `main.aux'.
@@ -1161,16 +1193,16 @@ LaTeX Font Info:    ... okay on input line 19.
 (C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count348
-\scratchdimen=\dimen316
+\scratchcounter=\count352
+\scratchdimen=\dimen323
 \scratchbox=\box98
-\nofMPsegments=\count349
-\nofMParguments=\count350
+\nofMPsegments=\count353
+\nofMParguments=\count354
 \everyMPshowfont=\toks53
-\MPscratchCnt=\count351
-\MPscratchDim=\dimen317
-\MPnumerator=\count352
-\makeMPintoPDFobject=\count353
+\MPscratchCnt=\count355
+\MPscratchDim=\dimen324
+\MPnumerator=\count356
+\makeMPintoPDFobject=\count357
 \everyMPtoPDFconversion=\toks54
 )
 (C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
@@ -1191,7 +1223,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count354
+\c@section@level=\count358
 )
 LaTeX Info: Redefining \ref on input line 19.
 LaTeX Info: Redefining \pageref on input line 19.
@@ -1224,7 +1256,10 @@ Dictionary: translator-numbers-dictionary, Language: English
 (C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-t
 heorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-) (main.nav)
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+ (main.nav)
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <6> not available
 (Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 19.
@@ -1245,49 +1280,79 @@ LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
 [3
 
 ]
-<../imgs/wordcloud_santiago_estallido1.png, id=99, 433.62pt x 289.08pt>
-File: ../imgs/wordcloud_santiago_estallido1.png Graphic file (type png)
-<use ../imgs/wordcloud_santiago_estallido1.png>
-Package pdftex.def Info: ../imgs/wordcloud_santiago_estallido1.png  used on inp
-ut line 39.
-(pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
+<../imgs/twint_code_example_visual.png, id=99, 536.0025pt x 209.28188pt>
+File: ../imgs/twint_code_example_visual.png Graphic file (type png)
+<use ../imgs/twint_code_example_visual.png>
+Package pdftex.def Info: ../imgs/twint_code_example_visual.png  used on input l
+ine 40.
+(pdftex.def)             Requested size: 268.0006pt x 104.64067pt.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 39.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 40.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
+[4
+
+ <../imgs/twint_code_example_visual.png>]
+<../imgs/twint_user.png, id=129, 169.38281pt x 44.41594pt>
+File: ../imgs/twint_user.png Graphic file (type png)
+<use ../imgs/twint_user.png>
+Package pdftex.def Info: ../imgs/twint_user.png  used on input line 69.
+(pdftex.def)             Requested size: 122.91406pt x 32.23155pt.
+File: ../imgs/twint_user.png Graphic file (type png)
+<use ../imgs/twint_user.png>
+Package pdftex.def Info: ../imgs/twint_user.png  used on input line 69.
+(pdftex.def)             Requested size: 122.91406pt x 32.23155pt.
+File: ../imgs/twint_user.png Graphic file (type png)
+<use ../imgs/twint_user.png>
+Package pdftex.def Info: ../imgs/twint_user.png  used on input line 69.
+(pdftex.def)             Requested size: 122.91406pt x 32.23155pt.
+File: ../imgs/twint_user.png Graphic file (type png)
+<use ../imgs/twint_user.png>
+Package pdftex.def Info: ../imgs/twint_user.png  used on input line 69.
+(pdftex.def)             Requested size: 122.91406pt x 32.23155pt.
+ [5
+
+ <../imgs/twint_user.png>]
+<../imgs/wordcloud_santiago_estallido1.png, id=157, 433.62pt x 289.08pt>
+File: ../imgs/wordcloud_santiago_estallido1.png Graphic file (type png)
+<use ../imgs/wordcloud_santiago_estallido1.png>
+Package pdftex.def Info: ../imgs/wordcloud_santiago_estallido1.png  used on inp
+ut line 77.
+(pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 77.
+
 
 (C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 77.
 
 
 (C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-[4
+[6
 
  <../imgs/wordcloud_santiago_estallido1.png>]
-<../imgs/wordcloud_santiago_8M.png.png, id=130, 433.62pt x 289.08pt>
+<../imgs/wordcloud_santiago_8M.png.png, id=187, 433.62pt x 289.08pt>
 File: ../imgs/wordcloud_santiago_8M.png.png Graphic file (type png)
 <use ../imgs/wordcloud_santiago_8M.png.png>
 Package pdftex.def Info: ../imgs/wordcloud_santiago_8M.png.png  used on input l
-ine 47.
+ine 85.
 (pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
- [5
+ [7
 
  <../imgs/wordcloud_santiago_8M.png.png>]
-<../imgs/wordcloud_chile_votaciones.png, id=158, 433.62pt x 289.08pt>
+<../imgs/wordcloud_chile_votaciones.png, id=216, 433.62pt x 289.08pt>
 File: ../imgs/wordcloud_chile_votaciones.png Graphic file (type png)
 <use ../imgs/wordcloud_chile_votaciones.png>
 Package pdftex.def Info: ../imgs/wordcloud_chile_votaciones.png  used on input 
-line 55.
+line 93.
 (pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
- [6
+ [8
 
- <../imgs/wordcloud_chile_votaciones.png>] [7
+ <../imgs/wordcloud_chile_votaciones.png>] [9
 
 ]
 \tf@nav=\write8
@@ -1307,11 +1372,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27759 strings out of 479334
- 543129 string characters out of 2857084
- 851676 words of memory out of 3000000
- 44609 multiletter control sequences out of 15000+200000
- 409213 words of font info for 49 fonts, out of 3000000 for 9000
+ 29060 strings out of 479334
+ 568997 string characters out of 2857084
+ 876489 words of memory out of 3000000
+ 45892 multiletter control sequences out of 15000+200000
+ 409381 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  131i,16n,132p,424b,576s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
@@ -1323,9 +1388,9 @@ KTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/jigna/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/jigna/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/jig
 na/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (7 pages, 333360 bytes).
+Output written on main.pdf (9 pages, 367518 bytes).
 PDF statistics:
- 243 PDF objects out of 1000 (max. 8388607)
- 15 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 300 PDF objects out of 1000 (max. 8388607)
+ 19 named destinations out of 1000 (max. 500000)
+ 68 words of extra memory for PDF output out of 10000 (max. 10000000)
 
