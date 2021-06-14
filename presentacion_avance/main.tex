@@ -8,7 +8,7 @@
 \usefonttheme[onlymath]{serif}
 \usefonttheme{structuresmallcapsserif}
 
-\title[Análisis de Datos: Twitter]{Análisis de Datos: Twitter}
+\title[Análisis de Datos con Twitter]{Análisis de Datos con Twitter}
 \author{Javier Castro M.}
 \institute{Universidad De Chile}
 \date{\today}
@@ -21,7 +21,9 @@
 	\maketitle
 	
 	\begin{frame}{Objetivos}
-		\textbf{Motivación}: El principio del proyecto es entender cómo los datos impactan en el resultado de nuestro modelo. O bien, entender que los posibles sesgos que presenten nuestros datos se traspasaran a los resultados.
+		\textbf{Motivación}: El principio del proyecto es entender cómo los datos impactan en el resultado de nuestro modelo. O bien, probar que los posibles sesgos que presenten nuestros datos se traspasaran a los resultados.\\
+		\vspace{1cm}
+		\textbf{Primera idea}: Crear un generador de texto que entrene con tweets creados en Chile durante cierto tiempo.
 	\end{frame}
 
 	\begin{frame}{Twint: \textbf{Tw}itter \textbf{In}telligence \textbf{T}ool}
@@ -31,7 +33,7 @@
 	\end{frame}
 
 	\begin{frame}{Twint}
-		No hay una documentación detallada de \texttt{twint}, pero típicamente se sigue la siguiente estructura para obtener tweets:
+		Típicamente el uso de \texttt{twint} sigue la siguiente estructura:
 		\begin{figure}
 			\centering
 			\includegraphics[scale=.5]{../imgs/twint_code_example_visual.png}
@@ -40,33 +42,21 @@
 	\end{frame}
 
 
-	\begin{frame}{Twint}
-		Existen otros campos que se pueden modificar:
-		\begin{figure}
-			\centering
-			\begin{subfigure}[b]{0.4\textwidth}
-				\centering
-				\includegraphics[width=\textwidth]{../imgs/twint_user.png}
-			\end{subfigure}
-			\hfill
-			\begin{subfigure}[b]{0.4\textwidth}
-				\centering
-				\includegraphics[width=\textwidth]{../imgs/twint_user.png}
-			\end{subfigure}\\
-		
-			\begin{subfigure}[b]{0.4\textwidth}
-				\centering
-				\includegraphics[width=\textwidth]{../imgs/twint_user.png}
-			\end{subfigure}
-			\hfill
-			\begin{subfigure}[b]{0.4\textwidth}
-				\centering
-				\includegraphics[width=\textwidth]{../imgs/twint_user.png}
 
-			\end{subfigure}
-			\caption{Three simple graphs}
-		\end{figure}
+	\begin{frame}{Exploración de los datos}
+		Se obtuvieron varios set de datos, estos consisten en archivos \texttt{csv} tales que cada \comillas{fila} corresponde a un tweet. Se buscaron solamente tweets en Santiago:
+		\begin{enumerate}
+			\item Tweets durante el estallido social.
+			\item Tweets durante el $8$ de marzo.
+			\item Tweets durante las votaciones pasadas.
+			\item Tweets que contienen la palabra \comillas{covid} durante el $2020$.
+		\end{enumerate}
+		\vspace{.5cm}
+		\textbf{Obs}: Los tweets que contienen videos o imágenes vienen acompañados de un link que direcciona al mismo tweet. 
 	\end{frame}
+
+
+	
 
 	\begin{frame}{Twitter en el estallido social}
 		\begin{figure}[h]
@@ -76,7 +66,7 @@
 		\end{figure}
 	\end{frame}
 
-	\begin{frame}{Twitter en el día de la mujer}
+	\begin{frame}{Twitter el $8$ de marzo}
 		\begin{figure}[h]
 			\centering
 			\includegraphics[scale=.5]{../imgs/wordcloud_santiago_8M.png}
@@ -92,12 +82,38 @@
 		\end{figure}
 	\end{frame}
 
+	\begin{frame}{Tweets: \comillas{covid}} 
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale=.4]{../imgs/serie_covid_2020.png}
+			\caption{Cantidad de tweets diarios que contienen la palabra \comillas{covid}.}
+		\end{figure}
+		\textbf{Obs}: El peak que se observa en el gráfico corresponde al $21$ de marzo de $2020$.
+	\end{frame}
+
+	\begin{frame}{¿Con qué sigo?}
+		\begin{enumerate}
+			
+			\item Naive Bayes: para palabras $c_i$,
+			
+				\begin{align*}
+					\p(c_{n+1}|c_1,...,c_n) \propto \p(c_{n+1}) \prod_{i=1}^n  \p(c_i|c_{n+1}) 
+				\end{align*}
+			
+			\item Topic modelling, algo como \textbf{LDA} (\textit{Latent Dirichlet Allocation}). Los tópicos se ven como distribuciones sobre palabras.
+			
+			\item Generador de texto con redes neuronales tipo LSTM.
+			
+			
+			\item Otros?
+		\end{enumerate}
+	\end{frame}
+
 	\begin{frame}{Fin}
 		\centering
 		\mybox{Muchas Gracias!}
 	\end{frame}
 
-	
 	
 	
 \end{document}

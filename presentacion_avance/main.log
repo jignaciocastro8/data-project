@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.21)  29 MAY 2021 17:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.21)  11 JUN 2021 16:50
 entering extended mode
 **./main.tex
 (main.tex
@@ -1275,7 +1275,7 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 31.
+(Font)              using `OT1/cmr/bx/n' instead on input line 33.
 
 [3
 
@@ -1284,75 +1284,68 @@ LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
 File: ../imgs/twint_code_example_visual.png Graphic file (type png)
 <use ../imgs/twint_code_example_visual.png>
 Package pdftex.def Info: ../imgs/twint_code_example_visual.png  used on input l
-ine 40.
+ine 42.
 (pdftex.def)             Requested size: 268.0006pt x 104.64067pt.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 40.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 42.
 
 [4
 
  <../imgs/twint_code_example_visual.png>]
-<../imgs/twint_user.png, id=129, 169.38281pt x 44.41594pt>
-File: ../imgs/twint_user.png Graphic file (type png)
-<use ../imgs/twint_user.png>
-Package pdftex.def Info: ../imgs/twint_user.png  used on input line 69.
-(pdftex.def)             Requested size: 122.91406pt x 32.23155pt.
-File: ../imgs/twint_user.png Graphic file (type png)
-<use ../imgs/twint_user.png>
-Package pdftex.def Info: ../imgs/twint_user.png  used on input line 69.
-(pdftex.def)             Requested size: 122.91406pt x 32.23155pt.
-File: ../imgs/twint_user.png Graphic file (type png)
-<use ../imgs/twint_user.png>
-Package pdftex.def Info: ../imgs/twint_user.png  used on input line 69.
-(pdftex.def)             Requested size: 122.91406pt x 32.23155pt.
-File: ../imgs/twint_user.png Graphic file (type png)
-<use ../imgs/twint_user.png>
-Package pdftex.def Info: ../imgs/twint_user.png  used on input line 69.
-(pdftex.def)             Requested size: 122.91406pt x 32.23155pt.
- [5
-
- <../imgs/twint_user.png>]
-<../imgs/wordcloud_santiago_estallido1.png, id=157, 433.62pt x 289.08pt>
-File: ../imgs/wordcloud_santiago_estallido1.png Graphic file (type png)
-<use ../imgs/wordcloud_santiago_estallido1.png>
-Package pdftex.def Info: ../imgs/wordcloud_santiago_estallido1.png  used on inp
-ut line 77.
-(pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 77.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 56.
 
 
 (C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 77.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 56.
 
 
 (C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-[6
+[5
+
+]
+<../imgs/wordcloud_santiago_estallido1.png, id=158, 433.62pt x 289.08pt>
+File: ../imgs/wordcloud_santiago_estallido1.png Graphic file (type png)
+<use ../imgs/wordcloud_santiago_estallido1.png>
+Package pdftex.def Info: ../imgs/wordcloud_santiago_estallido1.png  used on inp
+ut line 67.
+(pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
+ [6
 
  <../imgs/wordcloud_santiago_estallido1.png>]
 <../imgs/wordcloud_santiago_8M.png.png, id=187, 433.62pt x 289.08pt>
 File: ../imgs/wordcloud_santiago_8M.png.png Graphic file (type png)
 <use ../imgs/wordcloud_santiago_8M.png.png>
 Package pdftex.def Info: ../imgs/wordcloud_santiago_8M.png.png  used on input l
-ine 85.
+ine 75.
 (pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
  [7
 
  <../imgs/wordcloud_santiago_8M.png.png>]
-<../imgs/wordcloud_chile_votaciones.png, id=216, 433.62pt x 289.08pt>
+<../imgs/wordcloud_chile_votaciones.png, id=217, 433.62pt x 289.08pt>
 File: ../imgs/wordcloud_chile_votaciones.png Graphic file (type png)
 <use ../imgs/wordcloud_chile_votaciones.png>
 Package pdftex.def Info: ../imgs/wordcloud_chile_votaciones.png  used on input 
-line 93.
+line 83.
 (pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
  [8
 
- <../imgs/wordcloud_chile_votaciones.png>] [9
+ <../imgs/wordcloud_chile_votaciones.png>]
+<../imgs/serie_covid_2020.png, id=245, 578.16pt x 397.485pt>
+File: ../imgs/serie_covid_2020.png Graphic file (type png)
+<use ../imgs/serie_covid_2020.png>
+Package pdftex.def Info: ../imgs/serie_covid_2020.png  used on input line 92.
+(pdftex.def)             Requested size: 231.2599pt x 158.99118pt.
+ [9
+
+ <../imgs/serie_covid_2020.png>] [10
+
+] [11
 
 ]
 \tf@nav=\write8
@@ -1372,25 +1365,33 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29060 strings out of 479334
- 568997 string characters out of 2857084
- 876489 words of memory out of 3000000
- 45892 multiletter control sequences out of 15000+200000
- 409381 words of font info for 50 fonts, out of 3000000 for 9000
+ 29164 strings out of 479334
+ 571182 string characters out of 2857084
+ 879533 words of memory out of 3000000
+ 45982 multiletter control sequences out of 15000+200000
+ 415630 words of font info for 74 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,16n,132p,424b,576s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 131i,16n,132p,424b,658s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbx12.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmcsc10.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmmi10.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jigna/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/jigna/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/jigna/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/jig
-na/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (9 pages, 367518 bytes).
+public/amsfonts/cm/cmex10.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jigna/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/jigna/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jigna/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jigna/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users
+/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb>
+<C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+ss8.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmssbx10.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmssi10.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jigna/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/jigna/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (11 pages, 456465 bytes).
 PDF statistics:
- 300 PDF objects out of 1000 (max. 8388607)
- 19 named destinations out of 1000 (max. 500000)
- 68 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 382 PDF objects out of 1000 (max. 8388607)
+ 23 named destinations out of 1000 (max. 500000)
+ 74 words of extra memory for PDF output out of 10000 (max. 10000000)
 

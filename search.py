@@ -5,7 +5,7 @@ import nest_asyncio
 nest_asyncio.apply()
 
 
-def search_tweets_santiago(since, until, file_name):
+def search_tweets_santiago(since, until, word, file_name):
     """Search for tweets and saves them into a csv file.
 
     Args:
@@ -19,7 +19,7 @@ def search_tweets_santiago(since, until, file_name):
     # Custom config
     #c.Min_likes = 10
     #c.Min_retweets = 10
-    c.Search = 'covid'
+    c.Search = word
 
     # Hide output
     #c.Hide_output = False
@@ -42,6 +42,7 @@ def search_tweets_santiago(since, until, file_name):
     print('time (min): ', (time.time() - ini) / 60 ) 
 
 if __name__ == "__main__":
-    search_tweets_santiago('2020-01-01', '2020-12-31', 'santiago_covid_2020')
+    #search_tweets_santiago('2020-01-01', '2021-05-31', 'jadue', 'santiago_jadue_2020')
+    search_tweets_santiago('2020-01-01', '2021-05-31', 'covid', 'santiago_covid_2020')
 
 
