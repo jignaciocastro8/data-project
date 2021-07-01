@@ -7,7 +7,13 @@ from wordcloud import WordCloud
 
 # spanish stop words
 stop_words = set(stopwords.words('spanish'))
-problematic_words = ['t', 'si', 'q', 'https']
+forbidden_words = ['t', 'si', 'q', 'https', 'co', 'solo', 'ser', 'bien', 
+                        'así', 'ma', 'igual', 'va', 'después', 'hacer',
+                        'hace', 'creo'] + list(stop_words)
+
+
+
+
 
 def wordcloud_tweets(df, file_name = '', save = True, forbidden_words = []):
     """Create a wordcloud from a collection of tweets. For this purpose we put all the tweets together
@@ -57,3 +63,23 @@ def df_to_datetime(df):
     """
     df['date'] = [datetime.datetime.strptime(date, '%Y-%m-%d') for date in df['date']]
     return df
+
+def preprocess_tweet(tweet):
+    """[summary]
+
+    Args:
+        tweet ([type]): [description]
+
+    Returns:
+        [type]: [description]
+    """
+    final = tweet.replace('#', '').replace(',', '').replace('.', '').split()
+    final = [w.lower() for w in final]
+    final = [w for w in final if w not in stop_words]
+    return final
+
+
+# test:
+
+tweet = 'BUenas BUENas, hola @hola #HOla'
+print(preprocess_tweet(tweet))
