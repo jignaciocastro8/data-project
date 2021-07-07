@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.21)  11 JUN 2021 16:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.21)  6 JUL 2021 21:12
 entering extended mode
 **./main.tex
 (main.tex
@@ -1136,24 +1136,24 @@ File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1211,7 +1211,7 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-Package hyperref Info: Link coloring OFF on input line 19.
+Package hyperref Info: Link coloring OFF on input line 17.
 
 (C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1225,9 +1225,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count358
 )
-LaTeX Info: Redefining \ref on input line 19.
-LaTeX Info: Redefining \pageref on input line 19.
-LaTeX Info: Redefining \nameref on input line 19.
+LaTeX Info: Redefining \ref on input line 17.
+LaTeX Info: Redefining \pageref on input line 17.
+LaTeX Info: Redefining \nameref on input line 17.
  (main.out) (main.out)
 \@outlinefile=\write7
 \openout7 = `main.out'.
@@ -1262,90 +1262,70 @@ Package caption Info: End \AtBeginDocument code.
  (main.nav)
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <6> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 19.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 17.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 21.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 19.
 
 [1
 
-{C:/Users/jigna/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2
-
-]
-
-LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 33.
-
-[3
-
-]
-<../imgs/twint_code_example_visual.png, id=99, 536.0025pt x 209.28188pt>
-File: ../imgs/twint_code_example_visual.png Graphic file (type png)
-<use ../imgs/twint_code_example_visual.png>
-Package pdftex.def Info: ../imgs/twint_code_example_visual.png  used on input l
-ine 42.
-(pdftex.def)             Requested size: 268.0006pt x 104.64067pt.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 42.
-
-[4
-
- <../imgs/twint_code_example_visual.png>]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 56.
+{C:/Users/jigna/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 31.
 
 
 (C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 56.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 31.
 
 
 (C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-[5
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
+(Font)              using `OT1/cmr/bx/n' instead on input line 31.
+
+[2
 
 ]
-<../imgs/wordcloud_santiago_estallido1.png, id=158, 433.62pt x 289.08pt>
-File: ../imgs/wordcloud_santiago_estallido1.png Graphic file (type png)
-<use ../imgs/wordcloud_santiago_estallido1.png>
-Package pdftex.def Info: ../imgs/wordcloud_santiago_estallido1.png  used on inp
-ut line 67.
-(pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
- [6
+<../imgs/segunda_avance/bow_tweets_ex.png, id=81, 601.4972pt x 92.59593pt>
+File: ../imgs/segunda_avance/bow_tweets_ex.png Graphic file (type png)
+<use ../imgs/segunda_avance/bow_tweets_ex.png>
+Package pdftex.def Info: ../imgs/segunda_avance/bow_tweets_ex.png  used on inpu
+t line 46.
+(pdftex.def)             Requested size: 300.74786pt x 46.29784pt.
+ [3
 
- <../imgs/wordcloud_santiago_estallido1.png>]
-<../imgs/wordcloud_santiago_8M.png.png, id=187, 433.62pt x 289.08pt>
-File: ../imgs/wordcloud_santiago_8M.png.png Graphic file (type png)
-<use ../imgs/wordcloud_santiago_8M.png.png>
-Package pdftex.def Info: ../imgs/wordcloud_santiago_8M.png.png  used on input l
-ine 75.
-(pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
- [7
+ <../imgs/segunda_avance/bow_tweets_ex.png>]
+<../imgs/segunda_avance/boric_5topics_arroba_hash.png, id=111, 625.58719pt x 42
+8.35031pt>
+File: ../imgs/segunda_avance/boric_5topics_arroba_hash.png Graphic file (type p
+ng)
+<use ../imgs/segunda_avance/boric_5topics_arroba_hash.png>
+Package pdftex.def Info: ../imgs/segunda_avance/boric_5topics_arroba_hash.png  
+used on input line 54.
+(pdftex.def)             Requested size: 250.23044pt x 171.33708pt.
 
- <../imgs/wordcloud_santiago_8M.png.png>]
-<../imgs/wordcloud_chile_votaciones.png, id=217, 433.62pt x 289.08pt>
-File: ../imgs/wordcloud_chile_votaciones.png Graphic file (type png)
-<use ../imgs/wordcloud_chile_votaciones.png>
-Package pdftex.def Info: ../imgs/wordcloud_chile_votaciones.png  used on input 
-line 83.
-(pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
- [8
 
- <../imgs/wordcloud_chile_votaciones.png>]
-<../imgs/serie_covid_2020.png, id=245, 578.16pt x 397.485pt>
-File: ../imgs/serie_covid_2020.png Graphic file (type png)
-<use ../imgs/serie_covid_2020.png>
-Package pdftex.def Info: ../imgs/serie_covid_2020.png  used on input line 92.
-(pdftex.def)             Requested size: 231.2599pt x 158.99118pt.
- [9
+LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 54.
 
- <../imgs/serie_covid_2020.png>] [10
+[4
 
-] [11
+ <../imgs/segunda_avance/boric_5topics_arroba_hash.png>]
+<../imgs/segunda_avance/boric_5topics.png, id=139, 622.57594pt x 428.35031pt>
+File: ../imgs/segunda_avance/boric_5topics.png Graphic file (type png)
+<use ../imgs/segunda_avance/boric_5topics.png>
+Package pdftex.def Info: ../imgs/segunda_avance/boric_5topics.png  used on inpu
+t line 61.
+(pdftex.def)             Requested size: 249.02596pt x 171.33708pt.
+ [5
+
+ <../imgs/segunda_avance/boric_5topics.png>] [6
+
+] [7
 
 ]
 \tf@nav=\write8
@@ -1365,13 +1345,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29164 strings out of 479334
- 571182 string characters out of 2857084
- 879533 words of memory out of 3000000
- 45982 multiletter control sequences out of 15000+200000
- 415630 words of font info for 74 fonts, out of 3000000 for 9000
+ 29099 strings out of 479334
+ 569954 string characters out of 2857084
+ 877531 words of memory out of 3000000
+ 45933 multiletter control sequences out of 15000+200000
+ 411862 words of font info for 58 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,16n,132p,424b,658s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 131i,16n,132p,424b,577s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbx12.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmcsc10.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/
@@ -1379,19 +1359,16 @@ public/amsfonts/cm/cmex10.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jigna/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/jigna/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jigna/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jigna/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users
-/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb>
-<C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-ss8.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmssbx10.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmssi10.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jigna/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/jigna/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (11 pages, 456465 bytes).
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/jigna
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Use
+rs/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.
+pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmsy8.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (7 pages, 233910 bytes).
 PDF statistics:
- 382 PDF objects out of 1000 (max. 8388607)
- 23 named destinations out of 1000 (max. 500000)
- 74 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 261 PDF objects out of 1000 (max. 8388607)
+ 15 named destinations out of 1000 (max. 500000)
+ 64 words of extra memory for PDF output out of 10000 (max. 10000000)
 

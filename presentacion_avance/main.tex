@@ -13,101 +13,63 @@
 \institute{Universidad De Chile}
 \date{\today}
 
-%exponer sus objetivos, descripción de la base de datos y de los métodos a aplicar
-
 
 \begin{document}
 	
 	\maketitle
 	
-	\begin{frame}{Objetivos}
-		\textbf{Motivación}: El principio del proyecto es entender cómo los datos impactan en el resultado de nuestro modelo. O bien, probar que los posibles sesgos que presenten nuestros datos se traspasaran a los resultados.\\
-		\vspace{1cm}
-		\textbf{Primera idea}: Crear un generador de texto que entrene con tweets creados en Chile durante cierto tiempo.
+	\begin{frame}{\textbf{LDA}: \comillas{Latent Dirichlet allocation}}
+		LDA es un modelo tipo \textbf{topic modelling}; trata de capturar temas latentes en el texto mediante la calibración de dos parámetros, $\alpha\in [0,1]^{K}$ y $\beta \in [0,1]^{K\times V}$. Donde $K$ es la cantidad de tópicos y $V$ el tamaño del vocabulario. 
+		
+		\begin{itemize}
+			\item Se samplea una distribución sobre tópicos $\theta\sim Dir(\alpha, K)$. Notar que $\sum \theta_i = 1$.
+			\item Dado $\theta$, se samplea un tópico $t\sim\theta$.
+			\item Dado el tópico $t$, se samplea una palabra $w\sim\beta_{t\cdot}$.
+		\end{itemize}
+		
+		
 	\end{frame}
 
-	\begin{frame}{Twint: \textbf{Tw}itter \textbf{In}telligence \textbf{T}ool}
-		Desde el \textbf{github} de \textbf{twint}: \\
-		\vspace{1cm}
-		\comillas{Twint is an advanced Twitter scraping tool written in Python that allows for scraping Tweets from Twitter profiles without using Twitter's API.}
-	\end{frame}
-
-	\begin{frame}{Twint}
-		Típicamente el uso de \texttt{twint} sigue la siguiente estructura:
-		\begin{figure}
+	\begin{frame}{\textbf{LDA}: \comillas{Latent Dirichlet allocation}}
+		Para aplicar el LDA podemos usar:
+		\begin{itemize}
+			\item \texttt{gensim.models.LdaMulticore}
+			\item \texttt{gensim.models.LdaModel} 
+		\end{itemize}
+		Se necesita transformar los textos en \comillas{bag of words}. Los tweets procesados quedan como se ven a continuación:
+		
+		\begin{figure}[h]
 			\centering
-			\includegraphics[scale=.5]{../imgs/twint_code_example_visual.png}
-			\caption{Uso típico de \texttt{twint}.}
+			\includegraphics[scale=.5]{../imgs/segunda_avance/bow_tweets_ex.png}
+		\end{figure} 
+		
+	\end{frame}
+
+	\begin{frame}{Resultados}
+		Se aplicó este modelo para tweets de la cuenta \texttt{@gabrielboric}.
+		\begin{figure}[h]
+			\includegraphics[scale=.4]{../imgs/segunda_avance/boric_5topics_arroba_hash.png}
+			\caption{Sin eliminar los @}
 		\end{figure}
 	\end{frame}
 
+	\begin{frame}{Resultados}
+		\begin{figure}[h]
+			\includegraphics[scale=.4]{../imgs/segunda_avance/boric_5topics.png}
+			\caption{Eliminando los @}
+		\end{figure}
+	\end{frame}
 
-
-	\begin{frame}{Exploración de los datos}
-		Se obtuvieron varios set de datos, estos consisten en archivos \texttt{csv} tales que cada \comillas{fila} corresponde a un tweet. Se buscaron solamente tweets en Santiago:
-		\begin{enumerate}
-			\item Tweets durante el estallido social.
-			\item Tweets durante el $8$ de marzo.
-			\item Tweets durante las votaciones pasadas.
-			\item Tweets que contienen la palabra \comillas{covid} durante el $2020$.
-		\end{enumerate}
-		\vspace{.5cm}
-		\textbf{Obs}: Los tweets que contienen videos o imágenes vienen acompañados de un link que direcciona al mismo tweet. 
+	\begin{frame}{Ideas}
+		\begin{itemize}
+			\item Hacer un limpieza más fina a los tweets.
+			\item Usar bigrams o similiares.
+			\item Quedarse sólo con adjetivos y sustantivos (quizá sólo aplicar esto con un corpus en inglés). 
+		\end{itemize}
 	\end{frame}
 
 
 	
-
-	\begin{frame}{Twitter en el estallido social}
-		\begin{figure}[h]
-			\centering
-			\includegraphics[scale=.5]{../imgs/wordcloud_santiago_estallido1.png}
-			\caption{Wordcloud de twitter el $18$ de octubre del $2019$ con coordenadas en Beaucheff y un radio de $10km$.}
-		\end{figure}
-	\end{frame}
-
-	\begin{frame}{Twitter el $8$ de marzo}
-		\begin{figure}[h]
-			\centering
-			\includegraphics[scale=.5]{../imgs/wordcloud_santiago_8M.png}
-			\caption{Wordcloud de twitter el $8$ de marzo del $2020$ con coordenadas en Beaucheff y un radio de $10km$.}
-		\end{figure}
-	\end{frame}
-
-	\begin{frame}{Twitter en las votaciones pasadas}
-		\begin{figure}[h]
-			\centering
-			\includegraphics[scale=.5]{../imgs/wordcloud_chile_votaciones.png}
-			\caption{Wordcloud de twitter durante las votaciones del $15$ y $16$ de mayo del $2021$ usando \texttt{.Near = "Santiago, Chile"}.}
-		\end{figure}
-	\end{frame}
-
-	\begin{frame}{Tweets: \comillas{covid}} 
-		\begin{figure}[h]
-			\centering
-			\includegraphics[scale=.4]{../imgs/serie_covid_2020.png}
-			\caption{Cantidad de tweets diarios que contienen la palabra \comillas{covid}.}
-		\end{figure}
-		\textbf{Obs}: El peak que se observa en el gráfico corresponde al $21$ de marzo de $2020$.
-	\end{frame}
-
-	\begin{frame}{¿Con qué sigo?}
-		\begin{enumerate}
-			
-			\item Naive Bayes: para palabras $c_i$,
-			
-				\begin{align*}
-					\p(c_{n+1}|c_1,...,c_n) \propto \p(c_{n+1}) \prod_{i=1}^n  \p(c_i|c_{n+1}) 
-				\end{align*}
-			
-			\item Topic modelling, algo como \textbf{LDA} (\textit{Latent Dirichlet Allocation}). Los tópicos se ven como distribuciones sobre palabras.
-			
-			\item Generador de texto con redes neuronales tipo LSTM.
-			
-			
-			\item Otros?
-		\end{enumerate}
-	\end{frame}
 
 	\begin{frame}{Fin}
 		\centering
