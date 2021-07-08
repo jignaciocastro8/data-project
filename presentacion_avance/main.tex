@@ -33,7 +33,7 @@
 	\begin{frame}{\textbf{LDA}: \comillas{Latent Dirichlet allocation}}
 		Para aplicar el LDA podemos usar:
 		\begin{itemize}
-			\item \texttt{gensim.models.LdaMulticore}
+			\item \texttt{gensim.models.LdaMulticore} (\texttt{broken pipe})
 			\item \texttt{gensim.models.LdaModel} 
 		\end{itemize}
 		Se necesita transformar los textos en \comillas{bag of words}. Los tweets procesados quedan como se ven a continuación:
@@ -42,11 +42,22 @@
 			\centering
 			\includegraphics[scale=.5]{../imgs/segunda_avance/bow_tweets_ex.png}
 		\end{figure} 
+	
+		El algoritmo entrega, para cada tópico, una distribución sobre las palabras y una medida llamada \comillas{coherencia}. 
 		
 	\end{frame}
 
 	\begin{frame}{Resultados}
-		Se aplicó este modelo para tweets de la cuenta \texttt{@gabrielboric}.
+		Se aplicó el algoritmo a tweets de la cuenta \texttt{@gabrielboric}, a estos se les realizo la limpieza correspondiente.
+		
+		\begin{itemize}
+			\item Resultan $20902$ tweets.
+			\item La cantidad de palabras resultantes resultó ser $1853$.
+			\item Se buscarán $5$ tópicos.
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Resultados}
 		\begin{figure}[h]
 			\includegraphics[scale=.4]{../imgs/segunda_avance/boric_5topics_arroba_hash.png}
 			\caption{Sin eliminar los @}
@@ -60,15 +71,43 @@
 		\end{figure}
 	\end{frame}
 
-	\begin{frame}{Ideas}
+
+	\begin{frame}{Resultados}
+		Se muestra la distribución para el primer tópico.
+		\begin{figure}[h]
+			\includegraphics[scale=.4]{../imgs/segunda_avance/boric_barplot0.png}
+		\end{figure}
+	\end{frame}
+
+	%\begin{frame}{Resultados}
+	%	\begin{figure}[h]
+	%		\includegraphics[scale=.4]{../imgs/segunda_avance/boric_barplot1.png}
+	%	\end{figure}
+	%\end{frame}
+	
+	\begin{frame}{Resultados}
+		Se muestra la coherencia de cada tópico.
+		\begin{figure}[h]
+			\includegraphics[scale=.4]{../imgs/segunda_avance/boric_topic_coherence.png}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}{Ideas y lo que falta}
 		\begin{itemize}
-			\item Hacer un limpieza más fina a los tweets.
+			\item Calibrar los hiperparámetros en base a alguna métrica (número de tópicos, $\alpha$ y $\beta$). 
+			\item Hacer un limpieza más fina a los tweets (eliminar palabras de muy baja frecuencia, trabajar el problema de palabras mal escritas).
 			\item Usar bigrams o similiares.
-			\item Quedarse sólo con adjetivos y sustantivos (quizá sólo aplicar esto con un corpus en inglés). 
+			\item Quedarse sólo con adjetivos y sustantivos (quizá sólo aplicar esto con un corpus en inglés).
+			\item Probar lo mismo con tweets de otros contextos.
 		\end{itemize}
 	\end{frame}
 
-
+	\begin{frame}{Bibliografía}
+		\begin{itemize}
+			\item Latent Dirichlet Allocation, Blei, Ng, Jordan, Journal of Machine Learning Research, 2003.
+			\item  \texttt{radimrehurek.com/gensim/models/ldamodel.html}
+		\end{itemize}
+	\end{frame}
 	
 
 	\begin{frame}{Fin}

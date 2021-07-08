@@ -12,7 +12,38 @@ forbidden_words = ['t', 'si', 'q', 'https', 'co', 'solo', 'ser', 'bien',
                         'hace', 'creo'] + list(stop_words)
 
 
+def preprocess_tweet(tweet):
+    """
+    Replaces unwanted characters and performs
+    a preprocessing.
+    input: 
+        (str) tweet.
+    return:
+        (str[]) final: list of words.
+    """
+    unwanted = ['#', ',', '.', '!', '?', '¿', '¡', '(',\
+                ')', '-', '=', 'jaja', 'jajaja',' 1','2',\
+                '3', '4', '5', '6', '7', '8', '9', '0',\
+                '"', ':']
+    final = delete_chars(tweet, unwanted).split()
+    final = [w.lower() for w in final]
+    final = [w for w in final if w not in stop_words and len(w) > 3]
+    # Se eliminan links y @users
+    final = [w for w in final if w[:4] != 'http']
+    final = [w for w in final if w[:1] != '@']
+    return final
 
+
+
+def delete_chars(text, unwanted_chars):
+    """
+    useful method to replace a list of chars on text.
+    return:
+        (str) the same str without the chars in chars.
+    """
+    for char in unwanted_chars:
+        text = text.replace(char, '')
+    return text
 
 
 def wordcloud_tweets(df, file_name = '', save = True, forbidden_words = []):
@@ -64,20 +95,8 @@ def df_to_datetime(df):
     df['date'] = [datetime.datetime.strptime(date, '%Y-%m-%d') for date in df['date']]
     return df
 
-def preprocess_tweet(tweet):
-    """[summary]
 
-    Args:
-        tweet ([type]): [description]
-
-    Returns:
-        [type]: [description]
-    """
-    final = tweet.replace('#', '').replace(',', '').replace('.', '').split()
-    final = [w.lower() for w in final]
-    final = [w for w in final if w not in stop_words]
-    return final
-
+def f(): print('hola')
 
 # test:
 
