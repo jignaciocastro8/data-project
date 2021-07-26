@@ -27,62 +27,117 @@
 %%%%
 
 \section{Análisis Exploratorio}
-En la primera parte del proyecto se realiza un proceso de adaptación a la librería \texttt{twint}, el formato de los datos que permite obtener y lo que podemos deducir de estos con un análisis exploratorio. Se decide buscar tweets en un radio de $10$ km con centro en las coordenadas de la facultad, que a simple vista coincide con el centro de la región Metropolitana. La razón de esta decisión es porque en esta región hay una población más grande y por lo tanto más probabilidad de encontrar cuentas de twitter. La presente sección se divide en dos partes, en la primera se mostrarán worclouds y en la segunda gráficos de la frecuencia de tweets diarios.
+Para la obtención de tweets se usa la librería \texttt{twint}\footnote{\href{https://github.com/twintproject/twint}{github.com/twintproject/twint}}. Esta librería es simple de usar, permite obtener una gran cantidad de datos y almacenarlos en formato \texttt{csv} u otros. En las Figuras \ref{fig: twint_example1_informe} y \ref{fig: twint_example2_informe} se muestra el código que se necesita para obtener los datos utilizados en este trabajo.    
+
+
+\begin{figure}[H]
+
+	\centering
+	\subfloat[]{
+			\label{fig: twint_example1_informe}
+			\includegraphics[scale=.5]{../imgs/twint_example1_informe.png}
+	}
+	%\hfill
+	\subfloat[]{
+			\label{fig: twint_example2_informe}
+			\includegraphics[scale=.5]{../imgs/twint_example2_informe.png}
+	}
+	\caption{A la izquierda se buscan y guardan tweets creados al rededor de Santiago entre las fechas \texttt{since} y \texttt{until} que además contengan la palabra \texttt{word}. A la derecha se obtienen y guardan los tweets de la cuenta \texttt{id}.}
+\end{figure}
+
+En la primera parte del proyecto se realiza un proceso de adaptación a la librería \texttt{twint} y el formato de los datos que permite obtener además de un análisis superficial a los datos que obtenemos en esta fase inicial. Se decide trabajar sólo con tweets en Santiago, esto porque en esta región hay una población más grande y por lo tanto una probabilidad más alta de encontrar cuentas de Twitter con respecto a otros lugares. Lo que queda de esta sección se divide en dos partes, en la primera se mostrarán worclouds y en la segunda gráficos de la frecuencia de tweets diarios para distintos set de datos.
+
+\begin{remark}
+	Otra razón por la cual fijar el lugar geográfico de la obtención de tweets es para disminuir la complejidad del proyecto, puede ser una variable a considerar en una tarea de mayor escala que además tome en cuenta la variable espacial de nuestros datos.	
+\end{remark}
+
 \subsection{Wordclouds}
-	Acá mostramos dos hitos importantes, el primero es el estallido social del $18$ de octubre del $2019$ y el segundo es el día de la mujer del $2020$. El tercer wordcloud que se muestra corresponde a los tweets que contienen la palabra \comillas{piñera} durante el $2020$.
+	Se muestran las wordclouds asociadas a tres set de tweets (o datos) distintos. Por un lado tenemos dos hitos importantes en Chile, el primero es el estallido social del $18$ de octubre del $2019$ y el segundo es el día de la mujer del $2020$. El tercero contiene los tweets que contienen la palabra \comillas{piñera} y fueron creados durante el $2020$.
+	
+	
+	
+	
    	\begin{figure}[H]
    		\centering
-   		\subfloat{
-	   		\begin{minipage}[c][1\width]{0.45\textwidth}
+   		\subfloat[]{
+	   		\begin{minipage}{0.33\textwidth}
 	   			\centering
 	   			\includegraphics[width=\textwidth]{../imgs/wordcloud_santiago_estallido1.png}
-	   			\caption{Tweets estallido social.}
 	   		\end{minipage}
+   			\label{fig: estallido}
    		}
-   		\hfill
-   		\subfloat{
-	   		\begin{minipage}[c][1\width]{0.45\textwidth}
+   		%\hfill
+   		\subfloat[]{
+	   		\begin{minipage}{0.33\textwidth}
 	   			\centering
 	   			\includegraphics[width=\textwidth]{../imgs/wordcloud_santiago_8M.png}
-	   			\caption{Tweets día de la Mujer.}
 	   		\end{minipage}
+   		\label{fig: mujer}
 		}
-		\vfill
-		\subfloat{
-			\begin{minipage}[c][1\width]{0.45\textwidth}
+		%\vfill
+		\subfloat[]{
+			\begin{minipage}{0.33\textwidth}
 				\centering
 				\includegraphics[width=\textwidth]{../imgs/wordcloud_santiago_pinera_2020.png}
-				\caption{Tweets con la palabra \comillas{piñera} el $2020$.}
 			\end{minipage}
+		\label{fig: pinera}
+		
 		}
+		\caption{De izquierda a derecha: estallido social, día de la mujera y tweets que contienen la palabra \comillas{piñera}.}
    	\end{figure}
+   Para encontrar los tweets del estallido y el día de la mujer sólo se especificaron las fechas y el lugar, el campo \texttt{c.Search} que aparece en la Figura \ref{fig: twint_example1_informe} se deja vacío. En cambio, para los tweets con \comillas{piñera}, se debe usar \texttt{c.Search = 'piñera'}. Las palabras \textbf{metrodesantiago} y \textbf{evasionmasivatodoeldía} que aparecen en \ref{fig: estallido} corresponden a hashtags que estuvieron presentes en Twitter durante los días previos al estallido. En la Figura \ref{fig: mujer} observamos las palabras \textbf{mujeres} y \textbf{marcha}, esto sucede porque en esa fecha ocurre la marcha en conmemoración del día de la mujer que, como vemos, tiene impacto en redes sociales como Twitter. En la Figura \ref{fig: pinera} se destacan las palabras \textbf{gobierno}, \textbf{Chile} y \textbf{derecha} que se relacionan bastante con lo que representa la palabra \comillas{piñera}. En las tres wordclouds se encuentran palabras bastante esperables y que guardan estrecha relación con el contexto social en el cual fueron creados los tweets, esta es una señal que confirma que nuestros datos tienen sentido con su contexto.
+    
 \subsection{Series de tiempo}
-Se expondrán series de tiempo relativas a la cantidad de tweets diarios que contengan cierta palabra clave. El primero tiene que ver con la pandemia.
+Se exponen series de tiempo relativas a la cantidad de tweets diarios que contengan cierta palabra clave. Acá trabajamos con dos set de tweets, por un lado tenemos el mismo set de datos de la sección anterior asociado a la palabra \comillas{piñera} y por otro contamos con los tweets que contienen la palabra \comillas{covid} y que fueron creados durante el año $2020$.
 \begin{figure}[H]
 	\centering
-	\subfloat{
-		\begin{minipage}[c][1\width]{0.45\textwidth}
+	\subfloat[]{
+		\label{fig: serie_covid_2020}
+		\begin{minipage}{0.45\textwidth}
 			\centering
 			\includegraphics[width=\textwidth]{../imgs/serie_covid_2020.png}
-			\caption{Tweets diarios con la palabra \comillas{covid}.}
 		\end{minipage}
 	}
-	\hfill
-	\subfloat{
-		\begin{minipage}[c][1\width]{0.45\textwidth}
+	\subfloat[]{
+		\label{fig: serie_pinera_2020}
+		\begin{minipage}{0.45\textwidth}
 			\centering
 			\includegraphics[width=\textwidth]{../imgs/serie_pinera_2020.png}
-			\caption{Tweets diarios con la palabra \comillas{piñera}.}
 		\end{minipage}
 	}
+	\caption{Cantidad de tweets diarios con la palabra \comillas{covid} (izq) y \comillas{piñera} (der).}
 \end{figure}
 
 \newpage
 
-\section{Latent Dirichlet Allocation}
-	Este algoritmo cae en la categoría del \textbf{topic modelling} en la cual se busca, a partir de datos de texto, encontrar tópicos latentes. Para este modelo se necesita un set de palabras $V$ y una cantidad de tópicos $K$. Los tópicos se modelan como distribuciones sobre el conjunto de palabras $V$. Si bien este algoritmo tiene una fase generativa, su objetivo es calibrar parámetros $\alpha\in [0,1]^{K}$ y $\beta^{K\times V}$ optimizando una cota variacional. Estos parámetros determinan el modelo.\\
+
+En la Figura \ref{fig: serie_covid_2020} vemos que la curva que se genera al suavizar tomando media móvil de siete días es similar a la curva de casos diarios de covid en Chile (también suavizada), pero adelantada en tiempo. El primer peak de los casos diarios ocurrió al rededor de junio \footnote{\href{https://www.google.com/search?client=firefox-b-d&q=covid+chile}{Link a los casos diarios covid en Chile según Google.}}, mientras que en \ref{fig: serie_covid_2020} esto ocurre en marzo cuando todo estaba comenzando. Aproximadamente, en ambas curvas, durante los siguientes seis meses se ve una tendencia a la baja. Esta especie de caracter predictivo de la curva \ref{fig: serie_covid_2020} no es sostenible en el tiempo porque si bien los casos aumentaron hasta superar el primer peak, en Twitter sólo se ve un aumento relativamente pequeño en la cantidad de tweets asociados al covid durante enero. Por otra parte, el peak más alto en \ref{fig: serie_covid_2020} corresponde al día $23$ de marzo del $2020$, en esta fecha se informa la primera muerte por covid en Chile.\\
+
+Con respecto a la Figura \ref{fig: serie_pinera_2020}, observamos que la cantidad de tweets que hablan de Piñera es relativamente constante en el tiempo, con un promedio de $86$ tweets diarios, y sin una tendencia marcada. 
+\newpage
+
+\section{Latent Dirichlet Allocation aplicado a datos de Twitter}
+	Este algoritmo cae en la categoría del \textbf{topic modelling} en la cual se busca, a partir de datos de texto, encontrar tópicos latentes en este. Para este modelo se necesita un set de palabras $V$ y una cantidad de tópicos $K$. Los tópicos se modelan como distribuciones de probabilidad sobre el conjunto de palabras $V$. Si bien este algoritmo tiene una fase generativa, su objetivo es calibrar parámetros $\alpha\in [0,1]^{K}$ y $\beta^{K\times V}$ optimizando una cota variacional. La idea es, dados $\alpha$ y $\beta$, generar palabras con el siguiente algoritmo:
 	
-	Primero se hace un review a los datos mostrando distintas estadísticas asociadas a estos. Luego, se expone la limpieza y preprocesamiento que se realiza sobre el texto para dejarlo en condiciones de ser usado por el modelo y los métodos de la librería \texttt{gensim}. 
+	\begin{itemize}
+		\item Se samplea una distribución sobre tópicos $\theta\sim Dir(\alpha, K)$. Notar que $\sum \theta_i = 1$.
+		\item Dado $\theta$, se samplea un tópico $t\sim\theta$.
+		\item Dado el tópico $t$, se samplea una palabra $w\sim\beta_{t\cdot}$.
+	\end{itemize}
+	
+	Lo anterior permite samplear una $(1)$ palabra, la idea es tomar estos sampleos de forma independiente. Tomemos una palabra $w_n$, luego, la probabilidad de generar esta palabra se puede calcular como,
+	
+	\begin{align*}
+		p(w_n|\alpha, \beta) &= \sum_{t_n} p(w_n|\alpha,\beta,t_n)p(t_n|\alpha,\beta)
+		= \sum_{t_n} p(w_n|\beta,t_n)\int_{\theta}p(t_n|\alpha,\beta,\theta)p(\theta|\alpha,\beta)d\theta\\
+		&= \sum_{t_n} p(w_n|\beta,t_n)\int_{\theta}p(t_n|\theta)p(\theta|\alpha)d\theta.
+	\end{align*}
+	Donde usamos probabilidades totales y que, según nuestro modelo, $p(w_n|\alpha,\beta,t_n)=p(w_n|\beta,t_n)$, $p(t_n|\alpha,\beta,\theta)=p(t_n|\theta)$ y que $p(\theta|\alpha,\beta)=p(\theta|\alpha)$. Usando la independencia vemos que,  
+	\begin{align*}
+		p(w|\alpha,\beta) &= \int p(\theta|\alpha)\parent{\prod_{n=1}^N \sum_{t_n} p(w_n|t_n,\beta)p(t_n|\theta)} d\theta.
+	\end{align*}
+	
+	Primero se hace un review a los datos mostrando distintas estadísticas asociadas a estos. Luego, se expone la limpieza y preprocesamiento que se realiza sobre el texto para dejarlo en condiciones de ser usado por el modelo y los métodos de la librería \texttt{gensim}\footnote{\href{https://radimrehurek.com/gensim/models/ldamodel.html}{Lda con Gensim (link)}}. 
 	
 \subsection{Datos}
 	Podríamos aplicar el modelo a todos los tweets de cierto espacio y tiempo pero se inclina por otro approach que es trabajar con los tweets de una cuenta en específico dado que el rango de temas o tópicos tocados por una cuenta es menor o más controlado que al trabajar con tweets de muchas cuentas. La cuenta que se escoge para partir es \texttt{@gabrielboric}, obtenemos sus tweets hasta junio del $2021$. Las características de este data set se pueden apreciar en las Figuras \ref{fig: boric_tweet_año} y \ref{fig: boric_tweet_2020}
@@ -135,7 +190,7 @@ Se expondrán series de tiempo relativas a la cantidad de tweets diarios que con
 
 	
 
-	La siguiente etapa en el preprocesamiento es transformar los tweets en vectores. Para esto, a cada palabra del diccionario, digamos $V$, se le asigna un único índice de forma que el conjunto se palabras (o diccionario) se modela como $\set{1,...,|V|}$. Luego, cada tweet, entendido como una colección de palabras en $V$ de la forma $t=\set{v_1,...,v_n}$, se transforma en $\set{(v_1,r_1),...,v_n,r_n)}$ donde $v_i$ es el índice de la palabra en $V$ y $r_i$ la cantidad de veces que $v_i$ aparece en $t$. A continuación, un ejemplo de esto.
+	La siguiente etapa en el preprocesamiento es transformar los tweets en vectores. Para esto, a cada palabra del diccionario, digamos $V$, se le asigna un único índice de forma que el conjunto se palabras (o diccionario) se modela como $\set{1,...,|V|}$. Luego, cada tweet, entendido como una colección de palabras en $V$ de la forma $t=\set{v_1,...,v_n}$, se transforma en $\set{(v_1,r_1),...,(v_n,r_n)}$ donde $v_i$ es el índice de la palabra en $V$ y $r_i$ la cantidad de veces que $v_i$ aparece en $t$. A continuación, un ejemplo de esto.
 	
 	\begin{figure}[H]
 		\centering
@@ -159,7 +214,7 @@ Se expondrán series de tiempo relativas a la cantidad de tweets diarios que con
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=.5]{../imgs/boric0_informe.png}
-		\caption{En esta iteración aplicamos el modelo fijando los parámetros al ojo y sin filtrar palabras poco frecuentes.}
+		\caption{Los tópicos están ordenados por coherencia y los números que aparecen al lado de cada palabra corresponde a la probabilidad de tal palabra en el tópico.}
 		\label{fig: boric0_informe}
 	\end{figure}
 %\input{biblio}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.21)  22 JUL 2021 19:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.21)  26 JUL 2021 19:45
 entering extended mode
 **./main.tex
 (main.tex
@@ -830,14 +830,35 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \titlewidthlast=\dimen308
 \titlewidthfirst=\dimen309
 )
-\c@theorem=\count325
-\c@remark=\count326
-\c@Cl=\count327
+(C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/blindtext\blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+\c@blindtext=\count325
+\c@Blindtext=\count326
+\c@blind@countparstart=\count327
+\blind@countxx=\count328
+\blindtext@numBlindtext=\count329
+\blind@countyy=\count330
+\c@blindlist=\count331
+\c@blindlistlevel=\count332
+\c@blindlist@level=\count333
+\blind@listitem=\count334
+\c@blind@listcount=\count335
+\c@blind@levelcount=\count336
+\blind@mathformula=\count337
+\blind@Mathformula=\count338
+\c@blind@randomcount=\count339
+\c@blind@randommax=\count340
+\c@blind@pangramcount=\count341
+\c@blind@pangrammax=\count342
+)
+\c@theorem=\count343
+\c@remark=\count344
+\c@Cl=\count345
 )
 (C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count328
+\l__color_backend_stack_int=\count346
 \l__pdf_internal_box=\box75
 ) (main.aux)
 \openout1 = `main.aux'.
@@ -899,16 +920,16 @@ LaTeX Font Info:    ... okay on input line 3.
 (C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count329
+\scratchcounter=\count347
 \scratchdimen=\dimen310
 \scratchbox=\box76
-\nofMPsegments=\count330
-\nofMParguments=\count331
+\nofMPsegments=\count348
+\nofMParguments=\count349
 \everyMPshowfont=\toks46
-\MPscratchCnt=\count332
+\MPscratchCnt=\count350
 \MPscratchDim=\dimen311
-\MPnumerator=\count333
-\makeMPintoPDFobject=\count334
+\MPnumerator=\count351
+\makeMPintoPDFobject=\count352
 \everyMPtoPDFconversion=\toks47
 )
 (C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
@@ -929,7 +950,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count335
+\c@section@level=\count353
 )
 LaTeX Info: Redefining \ref on input line 3.
 LaTeX Info: Redefining \pageref on input line 3.
@@ -962,113 +983,146 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
 (C:\Users\jigna\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<../imgs/wordcloud_santiago_estallido1.png, id=43, 433.62pt x 289.08pt>
+<../imgs/twint_example1_informe.png, id=47, 327.47343pt x 225.84375pt>
+File: ../imgs/twint_example1_informe.png Graphic file (type png)
+<use ../imgs/twint_example1_informe.png>
+Package pdftex.def Info: ../imgs/twint_example1_informe.png  used on input line
+ 39.
+(pdftex.def)             Requested size: 163.73631pt x 112.92159pt.
+<../imgs/twint_example2_informe.png, id=49, 288.3272pt x 174.6525pt>
+File: ../imgs/twint_example2_informe.png Graphic file (type png)
+<use ../imgs/twint_example2_informe.png>
+Package pdftex.def Info: ../imgs/twint_example2_informe.png  used on input line
+ 44.
+(pdftex.def)             Requested size: 144.16324pt x 87.32603pt.
+<../imgs/wordcloud_santiago_estallido1.png, id=50, 433.62pt x 289.08pt>
 File: ../imgs/wordcloud_santiago_estallido1.png Graphic file (type png)
 <use ../imgs/wordcloud_santiago_estallido1.png>
 Package pdftex.def Info: ../imgs/wordcloud_santiago_estallido1.png  used on inp
-ut line 41.
-(pdftex.def)             Requested size: 199.60895pt x 133.07544pt.
-<../imgs/wordcloud_santiago_8M.png.png, id=45, 433.62pt x 289.08pt>
+ut line 68.
+(pdftex.def)             Requested size: 146.3817pt x 97.58896pt.
+<../imgs/wordcloud_santiago_8M.png.png, id=51, 433.62pt x 289.08pt>
 File: ../imgs/wordcloud_santiago_8M.png.png Graphic file (type png)
 <use ../imgs/wordcloud_santiago_8M.png.png>
 Package pdftex.def Info: ../imgs/wordcloud_santiago_8M.png.png  used on input l
-ine 49.
-(pdftex.def)             Requested size: 199.60895pt x 133.07544pt.
-<../imgs/wordcloud_santiago_pinera_2020.png, id=46, 578.16pt x 397.485pt>
+ine 76.
+(pdftex.def)             Requested size: 146.3817pt x 97.58896pt.
+<../imgs/wordcloud_santiago_pinera_2020.png, id=52, 578.16pt x 397.485pt>
 File: ../imgs/wordcloud_santiago_pinera_2020.png Graphic file (type png)
 <use ../imgs/wordcloud_santiago_pinera_2020.png>
 Package pdftex.def Info: ../imgs/wordcloud_santiago_pinera_2020.png  used on in
-put line 57.
-(pdftex.def)             Requested size: 199.60895pt x 137.2295pt.
-<../imgs/serie_covid_2020.png, id=47, 578.16pt x 397.485pt>
-File: ../imgs/serie_covid_2020.png Graphic file (type png)
-<use ../imgs/serie_covid_2020.png>
-Package pdftex.def Info: ../imgs/serie_covid_2020.png  used on input line 69.
-(pdftex.def)             Requested size: 199.60895pt x 137.2295pt.
-<../imgs/serie_pinera_2020.png, id=48, 578.16pt x 397.485pt>
-File: ../imgs/serie_pinera_2020.png Graphic file (type png)
-<use ../imgs/serie_pinera_2020.png>
-Package pdftex.def Info: ../imgs/serie_pinera_2020.png  used on input line 77.
-(pdftex.def)             Requested size: 199.60895pt x 137.2295pt.
+put line 85.
+(pdftex.def)             Requested size: 146.3817pt x 100.63254pt.
+
+Overfull \hbox (15.56174pt too wide) in paragraph at lines 68--86
+ [][][][][][] 
+ []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.78 \end{figure}
-                  [1 <../imgs/wordcloud_santiago_estallido1.png> <../imgs/wordc
-loud_santiago_8M.png.png> <../imgs/wordcloud_santiago_pinera_2020.png>]
-[2 <../imgs/serie_covid_2020.png> <../imgs/serie_pinera_2020.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 83--84
+l.88    P
+         ara encontrar los tweets del estallido y el día de la mujer sólo ...
+[1 <../imgs/twint_example1_informe.png> <../imgs/twint_example2_informe.png>]
+<../imgs/serie_covid_2020.png, id=77, 578.16pt x 397.485pt>
+File: ../imgs/serie_covid_2020.png Graphic file (type png)
+<use ../imgs/serie_covid_2020.png>
+Package pdftex.def Info: ../imgs/serie_covid_2020.png  used on input line 100.
+(pdftex.def)             Requested size: 199.60895pt x 137.2295pt.
+<../imgs/serie_pinera_2020.png, id=78, 578.16pt x 397.485pt>
+File: ../imgs/serie_pinera_2020.png Graphic file (type png)
+<use ../imgs/serie_pinera_2020.png>
+Package pdftex.def Info: ../imgs/serie_pinera_2020.png  used on input line 107.
+
+(pdftex.def)             Requested size: 199.60895pt x 137.2295pt.
+
+[2 <../imgs/wordcloud_santiago_estallido1.png> <../imgs/wordcloud_santiago_8M.p
+ng.png> <../imgs/wordcloud_santiago_pinera_2020.png> <../imgs/serie_covid_2020.
+png> <../imgs/serie_pinera_2020.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
 
  []
 
-<../imgs/boric_tweet_año.png, id=77, 578.16pt x 397.485pt>
+[3]
+<../imgs/boric_tweet_año.png, id=111, 578.16pt x 397.485pt>
 File: ../imgs/boric_tweet_año.png Graphic file (type png)
 <use ../imgs/boric_tweet_año.png>
-Package pdftex.def Info: ../imgs/boric_tweet_año.png  used on input line 102.
+Package pdftex.def Info: ../imgs/boric_tweet_año.png  used on input line 157.
 (pdftex.def)             Requested size: 199.60895pt x 137.2295pt.
-<../imgs/boric_tweet_2020.png, id=78, 578.16pt x 397.485pt>
+<../imgs/boric_tweet_2020.png, id=112, 578.16pt x 397.485pt>
 File: ../imgs/boric_tweet_2020.png Graphic file (type png)
 <use ../imgs/boric_tweet_2020.png>
-Package pdftex.def Info: ../imgs/boric_tweet_2020.png  used on input line 111.
+Package pdftex.def Info: ../imgs/boric_tweet_2020.png  used on input line 166.
 (pdftex.def)             Requested size: 199.60895pt x 137.2295pt.
-[3 <../imgs/boric_tweet_año.png> <../imgs/boric_tweet_2020.png>]
-<../imgs/no_below_len_dict.png, id=98, 578.16pt x 397.485pt>
+ [4]
+<../imgs/no_below_len_dict.png, id=130, 578.16pt x 397.485pt>
 File: ../imgs/no_below_len_dict.png Graphic file (type png)
 <use ../imgs/no_below_len_dict.png>
-Package pdftex.def Info: ../imgs/no_below_len_dict.png  used on input line 132.
+Package pdftex.def Info: ../imgs/no_below_len_dict.png  used on input line 187.
 
 (pdftex.def)             Requested size: 289.07928pt x 198.742pt.
-<../imgs/bow_tweet_informe.png, id=99, 821.31844pt x 155.07938pt>
+ [5 <../imgs/boric_tweet_año.png> <../imgs/boric_tweet_2020.png>]
+<../imgs/bow_tweet_informe.png, id=140, 821.31844pt x 155.07938pt>
 File: ../imgs/bow_tweet_informe.png Graphic file (type png)
 <use ../imgs/bow_tweet_informe.png>
-Package pdftex.def Info: ../imgs/bow_tweet_informe.png  used on input line 142.
+Package pdftex.def Info: ../imgs/bow_tweet_informe.png  used on input line 197.
 
 (pdftex.def)             Requested size: 410.6582pt x 77.53949pt.
-<../imgs/boric0_informe.png, id=102, 721.19438pt x 428.35031pt>
+<../imgs/boric0_informe.png, id=143, 721.19438pt x 428.35031pt>
 File: ../imgs/boric0_informe.png Graphic file (type png)
 <use ../imgs/boric0_informe.png>
-Package pdftex.def Info: ../imgs/boric0_informe.png  used on input line 161.
+Package pdftex.def Info: ../imgs/boric0_informe.png  used on input line 216.
 (pdftex.def)             Requested size: 360.59631pt x 214.17462pt.
- [4 <../imgs/no_below_len_dict.png> <../imgs/bow_tweet_informe.png>] [5 <../img
-s/boric0_informe.png>] (main.aux)
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5E64F642116B94376EFFD4F944F85267;1077.
+
+[6 <../imgs/no_below_len_dict.png> <../imgs/bow_tweet_informe.png>] [7 <../imgs
+/boric0_informe.png>] (main.aux)
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 5E64F642116B94376EFFD4F944F85267;1077
+(rerunfilecheck)             After:  A4B28EF8F3C4FFA5EB62B2B9C99C3884;1232.
  ) 
 Here is how much of TeX's memory you used:
- 24392 strings out of 479334
- 438809 string characters out of 2857084
- 754127 words of memory out of 3000000
- 41371 multiletter control sequences out of 15000+200000
- 419266 words of font info for 63 fonts, out of 3000000 for 9000
+ 24591 strings out of 479334
+ 442336 string characters out of 2857084
+ 767466 words of memory out of 3000000
+ 41554 multiletter control sequences out of 15000+200000
+ 419601 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 92i,10n,91p,888b,565s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 92i,11n,91p,1240b,440s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\jigna\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecit
 1000.pk> <C:\Users\jigna\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecti1000.pk> <C:\Users\jigna\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+0\tcrm1000.pk> <C:\Users\jigna\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
 /dpi600\ecrm0600.pk> <C:\Users\jigna\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecrm0700.pk> <C:\Users\jigna\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\jigna\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\jigna\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\jigna\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\jigna\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\jigna\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\jigna\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\
-jigna\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc2488.pk> <C:\
-Users\jigna\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1440.pk
-> <C:\Users\jigna\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1
-728.pk><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmmi10.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmmi7.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/jigna/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/jigna/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jigna/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on main.pdf (6 pages, 588271 bytes).
+pen/ec/dpi600\ecbx1200.pk> <C:\Users\jigna\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\jigna\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\jigna\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\jigna\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0700.pk> <C:\Users\jigna\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\jigna\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\jigna\
+AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\
+jigna\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\
+Users\jigna\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc2488.pk
+> <C:\Users\jigna\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1
+440.pk> <C:\Users\jigna\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
+\ecbx1728.pk><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmex10.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb><C:/Users/jigna/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/jigna/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/jigna/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jigna/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/jigna/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/User
+s/jigna/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+
+Output written on main.pdf (8 pages, 633472 bytes).
 PDF statistics:
- 497 PDF objects out of 1000 (max. 8388607)
- 30 named destinations out of 1000 (max. 500000)
- 119 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 574 PDF objects out of 1000 (max. 8388607)
+ 39 named destinations out of 1000 (max. 500000)
+ 129 words of extra memory for PDF output out of 10000 (max. 10000000)
 

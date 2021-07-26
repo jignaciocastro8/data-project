@@ -7,13 +7,13 @@ nest_asyncio.apply()
 
 def search_user_tweets(id):
     ini = time.time()
-    c = twint.Config()
-    c.Username = id
 
-    # Storage
+    # Define c object
+    c = twint.Config()
+    # Parameters
+    c.Username = id
     c.Store_csv = True
     c.Output = 'data/'+ id +'.csv'
-    
     # Run search
     twint.run.Search(c)
 
@@ -29,27 +29,24 @@ def search_tweets_santiago(since, until, word, file_name):
     """
     ini =  time.time()
 
-    c = twint.Config()
+    
     # Custom config
     #c.Min_likes = 10
     #c.Min_retweets = 10
-    c.Search = word
 
     # Hide output
     #c.Hide_output = False
-    
-    # Location
     #c.Geo = "-33.45776872061534,-70.66448325142338,15km"
+
+    # Define c object
+    c = twint.Config()
+    # Parameters
+    c.Search = word
     c.Near = 'Santiago, Chile'
-    
-    # Time
     c.Since = since
     c.Until = until
-    
-    # Storage
     c.Store_csv = True
     c.Output = 'data/'+ file_name +'.csv'
-    
     # Run search
     twint.run.Search(c)
 
