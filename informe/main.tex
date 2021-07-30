@@ -15,16 +15,21 @@
 	\vspace{1cm}
 	{\scshape\Large Facultad de Ciencias Físicas y Matemáticas \par}
 	\vspace{3cm}
-	{\scshape\Huge LDA con datos de Twitter \par}
+	{\scshape{\Huge \textbf{LDA con datos de Twitter}}\\
+		Probabilidades y Estadística en el Análisis de Datos \par}
 	\vfill
 	{\Large  Javier Castro Medina\par}
 
 	\vfill
-	{\Large Abril 2021 \par}
+	{\Large Julio 2021 \par}
 \end{titlepage}
 %%% Portada %%%
 \newpage
 %%%%
+\section{Introducción}
+En este informe se documenta lo realizado en el proyecto: LDA con datos de twitter. En este se cuenta con un set de datos de texto correspondiente a tweets y se busca aplicar el algoritmo LDA de topic modelling, que se especifica más adelante. En la primera presentación de avance de proyecto se mostró el formato de los datos y se expuso un pequeño análisis a los primeros set de datos que se recopilaron. En la segunda presentación se mostró el algoritmo LDA y se aplicó, con la ayuda de la librería \texttt{gensim}, sobre los tweets de la cuenta \texttt{@gabrielboric} mostrando resultados preliminares. En este informe se especifica el preprocesamiento de los tweets y además, se optimizan los parámetros de LDA siguiendo una métrica denominada \texttt{u\_mass} que es comentada en las primeras secciones. 
+
+La motivación de este proyecto partió con la idea de identificar discursos de odio en la red social Twitter. Pero, una vez hecho el análisis exploratorio de los datos, surge y se prefiere la idea de aplicar algoritmos de topic modelling puesto que era algo más concreto a realizar sobre el data set. Es así como se comienzan a definir distintos objetivos e ideas a medida se iban revisando y procesando los datos, el objetivo principal es capturar de la mejor manera posible, en base a métricas, los temas que principalmente se discutan en un set de tweets. Como se trabajó con tweets de la cuenta \texttt{@gabrielboric}, se esperaba que por lo menos se pueda identificar un tópico con carácter político. Otra hipótesis es que en general, como Twitter es usado para discutir temas nacionales, los tópicos encontrados en un set de tweets entre $2019-2021$ tengan también tópicos con tintes políticos puesto que en esos años han habido varias discusiones y procesos políticos, además, claramente, deberíamos encontrar algunos relativos a la pandemia.
 
 \section{Análisis Exploratorio}
 Para la obtención de tweets se usa la librería \texttt{twint}\footnote{\href{https://github.com/twintproject/twint}{github.com/twintproject/twint}}. Esta librería es simple de usar, permite obtener una gran cantidad de datos y almacenarlos en formato \texttt{csv} u otros. En las Figuras \ref{fig: twint_example1_informe} y \ref{fig: twint_example2_informe} se muestra, a grandes rasgos, el código que se necesita para obtener los datos utilizados en este trabajo.    
@@ -45,7 +50,7 @@ Para la obtención de tweets se usa la librería \texttt{twint}\footnote{\href{h
 	\caption{A la izquierda se buscan y guardan tweets creados al rededor de Santiago entre las fechas \texttt{since} y \texttt{until} que además contengan la palabra \texttt{word}. A la derecha se obtienen y guardan los tweets de la cuenta \texttt{id}. \textbf{Scrapping tweets} es la expresión en inglés para este proceso.}
 \end{figure}
 
-En la primera parte del proyecto se realiza un proceso de adaptación a la librería \texttt{twint} y el formato de los datos que permite obtener además de un análisis superficial a los datos que obtenemos en esta fase inicial. Se decide trabajar sólo con tweets en Santiago, esto porque en tal sector hay una población más grande y por lo tanto, una probabilidad más alta de encontrar cuentas de Twitter con respecto a otros lugares. Lo que queda de esta sección se divide en dos partes, en la primera se mostrarán worclouds y en la segunda gráficos de la frecuencia de tweets diarios para distintos set de datos.
+En la primera parte del proyecto se realiza un proceso de adaptación a la librería \texttt{twint} y el formato de los datos que permite obtener, además de un análisis superficial a los datos que encontramos en esta fase inicial. Se decide trabajar sólo con tweets en Santiago, esto porque en tal sector hay una población más grande y por lo tanto, una probabilidad más alta de encontrar cuentas de Twitter con respecto a otros lugares. Lo que queda de esta sección se divide en dos partes, en la primera se mostrarán worclouds y en la segunda gráficos de la frecuencia de tweets diarios para distintos set de datos.
 
 \begin{remark}
 	Otra razón por la cual fijar el lugar geográfico de la obtención de tweets es disminuir la complejidad del proyecto, puede ser un aspecto a considerar en una tarea de mayor escala en la que además se tome en cuenta la variable espacial de nuestros datos.	
@@ -105,31 +110,30 @@ Se exponen series de tiempo relativas a la cantidad de tweets diarios que conten
 			\includegraphics[width=\textwidth]{../imgs/serie_pinera_2020.png}
 		\end{minipage}
 	}
-	\caption{Cantidad de tweets diarios con la palabra \comillas{covid} (izq) y \comillas{piñera} (der).}
+	\caption{Cantidad de tweets diarios con la palabra \comillas{covid} (a) y \comillas{piñera} (b).}
 \end{figure}
 
-\newpage
 
 
-En la Figura \ref{fig: serie_covid_2020} vemos que la curva que se genera al suavizar tomando media móvil de siete días es similar a la curva de casos diarios de covid en Chile (también suavizada), pero adelantada en tiempo. El primer peak de los casos diarios ocurrió al rededor de junio \footnote{\href{https://www.google.com/search?client=firefox-b-d&q=covid+chile}{Link a los casos diarios covid en Chile según Google.}}, mientras que en \ref{fig: serie_covid_2020} esto ocurre en marzo cuando todo estaba comenzando. Aproximadamente, en ambas curvas, durante los siguientes seis meses se ve una tendencia a la baja. Esta especie de caracter predictivo de la curva \ref{fig: serie_covid_2020} no es sostenible en el tiempo porque si bien los casos aumentaron hasta superar el primer peak, en Twitter durante enero sólo se ve un aumento relativamente pequeño en la cantidad de tweets asociados al covid. Por otra parte, el peak más alto en \ref{fig: serie_covid_2020} corresponde al día $23$ de marzo del $2020$, en esta fecha se informa la primera muerte por covid en Chile.\\
+En la Figura \ref{fig: serie_covid_2020} vemos que la curva que se genera al suavizar tomando media móvil de siete días es similar a la curva de casos diarios de covid en Chile (también suavizada), pero adelantada en tiempo. El primer peak de los casos diarios ocurrió al rededor de junio \footnote{\href{https://www.google.com/search?client=firefox-b-d&q=covid+chile}{Link a los casos diarios covid en Chile según Google.}}, mientras que en \ref{fig: serie_covid_2020} esto ocurre en marzo cuando todo estaba comenzando. Aproximadamente, en ambas curvas, durante los siguientes seis meses se ve una tendencia a la baja. Esta especie de carácter predictivo de la curva \ref{fig: serie_covid_2020} no es sostenible en el tiempo porque si bien los casos aumentaron hasta superar el primer peak, en Twitter sólo se ve un aumento relativamente pequeño en la cantidad de tweets durante enero. Por otra parte, el peak más alto en \ref{fig: serie_covid_2020} corresponde al día $21$ de marzo del $2020$, en esta fecha se informa la primera muerte por covid en Chile\footnote{\href{https://www.cnnchile.com/coronavirus/hitos-claves-covid-19-chile-mundo-cronologia_20200505/}{Cronología covid-19 en Chile (CNN Chile)}}.\\
 
 Con respecto a la Figura \ref{fig: serie_pinera_2020}, observamos que la cantidad de tweets que hablan de Piñera es relativamente constante en el tiempo, con un promedio de $86$ tweets diarios, y sin una tendencia marcada. 
-\newpage
+
 
 \section{Latent Dirichlet Allocation aplicado a datos de Twitter}
-	Este algoritmo cae en la categoría del \textbf{Topic Modelling} en la cual se busca, a partir de grandes data sets de texto, encontrar tópicos latentes en estos cosa que sería imposible de hacer humanamente. Para este modelo se necesita un set de palabras $V$ y de tópicos $K$, que sin perdida de generalidad denotamos como $K=\set{1,...,K}$. Los tópicos se modelan como distribuciones de probabilidad sobre el conjunto de palabras $V$. Si bien este algoritmo tiene una fase generativa, su objetivo es calibrar parámetros $\alpha\in [0,1]^{K}$ y $\beta\in[0,1]^{K\times V}$ optimizando cierta cantidad. La idea es, dados $\alpha$ y $\beta$, generar palabras con el siguiente algoritmo:
+	Este algoritmo cae en la categoría del \textbf{Topic Modelling} en la cual se busca, a partir de grandes data sets de texto, encontrar tópicos latentes en estos, cosa que sería imposible de hacer humanamente. Para este modelo se necesita un set de palabras $V$ y de tópicos $K$, que sin perdida de generalidad denotamos como $K=\set{1,...,K}$. Los tópicos se modelan como distribuciones de probabilidad sobre el conjunto de palabras $V$. Si bien este algoritmo tiene una fase generativa, su objetivo es calibrar parámetros $\alpha\in [0,1]^{K}$ y $\beta\in[0,1]^{K\times V}$ optimizando cierta cantidad. La idea es, dados $\alpha$ y $\beta$, generar palabras con el siguiente algoritmo:
 	
 	\begin{itemize}
-		\item Se samplea una distribución sobre tópicos $\theta\sim Dir(\alpha, K)$. Notar que $\sum \theta_{i=1}^K = 1$. $Dir$ es la distribución \href{https://en.wikipedia.org/wiki/Dirichlet_distribution}{Dirichlet}.
+		\item Se samplea una distribución sobre tópicos $\theta\sim Dir(\alpha, K)$. Notar que $\sum_{i=1}^K \theta = 1$. $Dir$ es la distribución \href{https://en.wikipedia.org/wiki/Dirichlet_distribution}{Dirichlet}.
 		\item Dado $\theta$, se samplea un tópico $t\sim\theta$.
 		\item Dado el tópico $t$, se samplea una palabra $w\sim\beta_{t\cdot}$.
 	\end{itemize}
 	
 	\begin{remark}
-		Este algoritmo nos permite interpretar los parámetros del modelo. $\theta\in\R^{K}$, que sólo depende de $\alpha$, corresponde a que tan relevante es cada tópico. $\beta\in[0,1]^{K\times V}$ modela como se distribuye cada tópico sobre el set de palabras. 
+		Este algoritmo nos permite interpretar los parámetros del modelo. $\theta\in\R^{K}$, que sólo depende de $\alpha$, corresponde a que tan relevante es cada tópico. En cambio, $\beta\in[0,1]^{K\times V}$ modela como se distribuye cada tópico sobre el set de palabras. 
 	\end{remark}
 	
-	Lo anterior permite samplear una $(1)$ palabra y tomamos los sampleos de forma independiente. Consideremos ahora una palabra $w_n$, luego, la probabilidad de generar esta palabra se puede calcular como,
+	Lo anterior permite samplear una $(1)$ palabra, también asumimos que los sampleos son independientes. Consideremos ahora una palabra $w_n$, luego, la probabilidad de generar esta palabra se puede calcular como,
 	
 	\begin{align*}
 		p(w_n|\alpha, \beta) &= \sum_{t\in K} p(w_n|\alpha,\beta,t)p(t|\alpha,\beta)
@@ -141,10 +145,19 @@ Con respecto a la Figura \ref{fig: serie_pinera_2020}, observamos que la cantida
 		p(w|\alpha,\beta) &= \int p(\theta|\alpha)\parent{\prod_{n=1}^N \sum_{t\in K} p(w_n|t,\beta)p(t|\theta)} d\theta.
 	\end{align*}
 	
-	El calculo anterior tiene razones Bayesianas de ser, esto porque permite calcular la distribución a posteriori de $(\theta, t)$ la cual se busca maximizar. La distribución que se obtiene es intratable numéricamente por lo cual se sigue un approach MCMC o \textbf{variational Bayes}  (\cite{LDA03}, \cite{LDA10}). La implementación de este algoritmo en \texttt{Python} esta dad por la librería \texttt{gensim}\footnote{\href{https://radimrehurek.com/gensim/models/ldamodel.html}{Lda con gensim (link)}}, el código se basa en el script \texttt{onlineldavb.py}\footnote{\href{https://github.com/blei-lab/onlineldavb/blob/master/onlineldavb.py}{Link al repositorio.}} de los autores de \cite{LDA10}. En el citado trabajo, los hiperparámetros cambian un poco asumiendo que la distribución $\beta_{t\cdot}$ de cada tópico $t\in K$ sobre las palabras $V$, es tal que $\beta\sim Dir(\eta, |V|)$. Así, los hiperparámetros (o priors) pasan a ser $(\alpha,\eta)$ y de esta forma son tratados por \texttt{gensim}.\\ 
+	El calculo anterior tiene razones Bayesianas de ser, esto porque permite calcular la distribución a posteriori de $(\theta, t)$ la cual se busca maximizar. La distribución que se obtiene es intratable numéricamente por lo cual se sigue un approach MCMC o \textbf{variational Bayes}  (\cite{LDA03}, \cite{LDA10}). La implementación de este algoritmo en \texttt{Python} esta dada por la librería \texttt{gensim}\footnote{\href{https://radimrehurek.com/gensim/models/ldamodel.html}{Lda con gensim (link)}}, el código se basa en el script \texttt{onlineldavb.py}\footnote{\href{https://github.com/blei-lab/onlineldavb/blob/master/onlineldavb.py}{Link al repositorio.}} de los autores de \cite{LDA10}. En el citado trabajo, los hiperparámetros cambian un poco asumiendo que la distribución $\beta_{t\cdot}$ de cada tópico $t\in K$ sobre las palabras $V$, es tal que $\beta_{t\cdot}\sim Dir(\eta, |V|)$. Así, los hiperparámetros (o priors) pasan a ser $(\alpha,\eta)$ y de esta forma son tratados por \texttt{gensim}.\\ 
 	
+	Existen distintas métricas para medir que tan coherente es un tópico (\cite{coherence}, \cite{coherence2}), la que se usa en este proyecto se denomina \texttt{u\_mass}. Esta se define como sigue.
+	\begin{align*}
+		\texttt{u\_mass}(t) = \frac{2}{N(N-1)} \sum_{i=2}^N\sum_{j=1}^{i-1}\log \parent{p(w_i|w_j)}.
+	\end{align*}
+	Donde $t = (w_1,...,w_N)$ es un tópico que se representa por sus $N$ palabras más probables ordenadas y $p(w_i|w_j)$ se estima con las frecuencias de aparición en el corpus usado para aprender los tópicos. En la práctica lo que se hace es definir $D(w)$ como la frecuencia de aparición de $w$ en el corpus, $D(w,v)$ como la frecuencia de aparición de $w$ junto a al menos una aparición de $v$ y aproximar la cantidad anterior como
+	\begin{align*}
+		\texttt{u\_mass}(t) = \frac{2}{N(N-1)} \sum_{i=2}^N\sum_{j=1}^{i-1}\log \parent{\frac{D(w_i,w_j)+\epsilon}{D(w_j)}}.
+	\end{align*}
+	Lo que se está calculando es algo así como un promedio de la probabilidades de $w_i$ condicionada en todas $w_j$ anteriores. Intuitivamente nos dice que tan relacionadas entre si están las palabras dentro del tópico, modelando la relación como probabilidad condicional.
 \subsection{Datos}
-	Podríamos aplicar el modelo a todos los tweets de cierto espacio y tiempo, pero se decide por otro approach que es trabajar con los tweets de una cuenta en específico dado que el rango de temas o tópicos tocados por una cuenta es menor o más controlado que al trabajar con tweets de muchas cuentas a la vez. La cuenta que se escoge para partir es \texttt{@gabrielboric}, obtenemos sus tweets hasta junio del $2021$. Las características de este data set se pueden apreciar en las Figuras \ref{fig: boric_tweet_año}, \ref{fig: boric_tweet_2020} y \ref{fig: tabla_boric}.
+	Podríamos aplicar el modelo a todos los tweets de cierto espacio y tiempo, pero se decide por otro approach que es trabajar con los tweets de una cuenta en específico dado que el rango de temas o tópicos tocados por una cuenta es menor o más controlado que al trabajar con tweets de muchas cuentas a la vez. La cuenta que se escoge para partir es \texttt{@gabrielboric}, obtenemos sus tweets hasta junio del $2021$. Las características de este data set se pueden apreciar en las Figuras \ref{fig: boric_tweet_año} y \ref{fig: tabla_boric}.
 
 	
 	
@@ -162,44 +175,36 @@ Con respecto a la Figura \ref{fig: serie_pinera_2020}, observamos que la cantida
  		\subfloat[]{
  			\begin{minipage}{0.45\textwidth}
  				\centering
- 				\label{fig: boric_tweet_2020}
- 				\includegraphics[width=\textwidth]{../imgs/boric_tweet_2020.png}
- 				%\caption{Tweets por mes en el año $2020$.}
+ 				\label{fig: tabla_boric}
+ 				\begin{tabular}{ ||c|c|| } 
+ 					\hline
+ 					\textbf{Total de tweets} & $39405$ \\ 
+ 					\hline
+ 					\textbf{Mínimo} & $0$ \\
+ 					\hline 
+ 					\textbf{Máximo} & $131$ \\
+ 					\hline
+ 					\textbf{Promedio} & $9.14$ \\
+ 					\hline
+ 				\end{tabular}
  			\end{minipage}
  		}
-	 	\vfill
-	 	\subfloat[]{
-	 		\begin{minipage}{0.45\textwidth}
-	 			\centering
-	 			\label{fig: tabla_boric}
-	 			\begin{tabular}{ ||c|c|| } 
-	 				\hline
-	 				\textbf{Total de tweets} & $39405$ \\ 
-	 				\hline
-	 				\textbf{Mínimo} & $0$ \\
-	 				\hline 
-	 				\textbf{Máximo} & $131$ \\
-	 				\hline
-	 				\textbf{Promedio} & $9.14$ \\
-	 				\hline
-	 			\end{tabular}
-	 		\end{minipage}
-	 	}
- 		\caption{Tweets por año (a) y por mes en el $2020$ (b). Tamaño del data set y estadísticas de la cantidad diaria de tweets (c).}
+
+ 		\caption{Tweets por año (a) y estadísticas de la cantidad diaria de tweets (b).}
  	\end{figure}
 	
 \subsection{Limpieza y preprocesamiento de datos}
-	Los datos que se tienen disponible corresponden a tweets en formato de texto. El procesamiento de base o inicial que se realiza sobre este corpus corresponde a eliminar \textbf{stop words}, links, palabras de largo menor o igual a $3$, caracteres indeseables\footnote{Se eliminaron: \#, comas, signos de exclamación y pregunta, paréntesis y el signo igual.} y finalmente pasar todas las palabras a minúscula. El procesamiento anterior se realizará siempre y al inicio de todo código, luego de este proceso a nivel de vocabulario, se decide eliminar aquellos tweets con una cantidad de palabras menor a $5$ lo que nos deja con $24218$ tweets. Lo siguiente que se puede hacer es quitar palabras de baja frecuencia, sin quitar estas palabras el diccionario\footnote{Entendemos por diccionario al conjunto de todas las palabras utilizadas en el corpus} resultante tiene un tamaño de $35892$ palabras. En el gráfico a continuación muestra la cantidad de palabras resultantes al variar este parámetro.
+	Los datos que se tienen disponible corresponden a tweets en formato de texto. El procesamiento de base o inicial que se realiza sobre este corpus corresponde a eliminar \textbf{stop words}, links, palabras de largo menor o igual a $3$, caracteres indeseables\footnote{Se eliminaron: \#, comas, signos de exclamación y pregunta, paréntesis y el signo igual.} y finalmente, pasar todas las palabras a minúscula. El procesamiento anterior se realizará siempre y al inicio de todo código, luego de este proceso a nivel de vocabulario, se decide eliminar aquellos tweets con una cantidad de palabras menor a $5$ lo que nos deja con $24218$ tweets. Lo siguiente que se puede hacer es quitar palabras de baja frecuencia, sin quitar estas palabras el diccionario\footnote{Entendemos por diccionario al conjunto de todas las palabras utilizadas en el corpus} resultante tiene un tamaño de $35892$ palabras. En el gráfico a continuación muestra la cantidad de palabras resultantes al variar este parámetro.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=.5]{../imgs/no_below_len_dict.png}
+		\includegraphics[scale=.4]{../imgs/no_below_len_dict.png}
 		\caption{Tamaño del diccionario en función de la cantidad de tweets mínima a la que las palabras deben permanecer. Es decir, $y$ corresponde a las palabras que resultan al filtrar las que aparezcan en menos de $x$ tweets. Este gráfico es importante porque nos permite ver con que tanto vocabulario nos quedamos cuando eliminamos palabras sin mucha importancia o para el modelo.}
 	\end{figure}
 
 	
 
-	La siguiente etapa en el preprocesamiento es transformar los tweets en vectores. Para esto, a cada palabra del diccionario, digamos $V$, se le asigna un único índice de forma que el conjunto de palabras (o diccionario) se modela como $\set{1,...,|V|}$. Luego, cada tweet, entendido como una colección de palabras en $V$ de la forma $t=\set{v_1,...,v_n}$, se transforma en $\set{(v_1,r_1),...,(v_n,r_n)}$ donde $v_i$ es el índice de la palabra en $V$ y $r_i$ la cantidad de veces que $v_i$ aparece en $t$. A continuación, un ejemplo de esto.
+	La siguiente etapa en el preprocesamiento es transformar los tweets en vectores. Para esto, a cada palabra del diccionario $V$ se le asigna un único índice de forma que el conjunto de palabras (o diccionario) se modela como $\set{1,...,|V|}$. Luego, cada tweet, entendido como una colección de palabras en $V$ de la forma $t=\set{v_1,...,v_n}$, se transforma en $\set{(v_1,r_1),...,(v_n,r_n)}$ donde $v_i$ es el índice de la palabra en $V$ y $r_i$ la cantidad de veces que $v_i$ aparece en $t$. A continuación, un ejemplo de esto.
 	
 	\begin{figure}[H]
 		\centering
@@ -222,32 +227,105 @@ Con respecto a la Figura \ref{fig: serie_pinera_2020}, observamos que la cantida
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=.4]{../imgs/gensim_code_informe.png}
-		\caption{\texttt{corpus} corresponde a lo mostrado en la Figura \ref{fig: bow_example}, \texttt{id2word} es nuestro vocabulario $V$, \texttt{alpha} y \texttt{eta} son los priors discutidos previamente, \texttt{num\_topics} es la cantidad de tópicos que estamos buscando y \texttt{random\_state} es la semilla del algoritmo. El método \texttt{top\_topics} permite obtener coherencia de cada tópico.}
+		\caption{\texttt{corpus} corresponde a lo mostrado en la Figura \ref{fig: bow_example}, \texttt{id2word} es nuestro vocabulario $V$, \texttt{alpha} y \texttt{eta} son los priors discutidos previamente, \texttt{num\_topics} es la cantidad de tópicos que estamos buscando y \texttt{random\_state} es la semilla del algoritmo que en los experimentos siempre fue $1$. El método \texttt{top\_topics} permite obtener coherencia de cada tópico.}
 		\label{fig: gensim_code_informe}
 	\end{figure}
 	El parámetro $\alpha$ lo podemos entregar como \texttt{symmetric}, si queremos que sea un vector, calculado internamente, con todas sus componentes iguales, \texttt{asymmetric}, si queremos que sea un vector como el anterior salvo que sus componentes son distintas, \texttt{auto} si queremos que el algoritmo calcule un vector tipo \texttt{asymmetric} internamente y un escalar $x$ si queremos que sea tipo \texttt{symmetric} pero que el valor que se repita sea $x$. Por otro lado, $\eta$ puede ser todo lo anterior salvo \texttt{asymmetric}. Acá es importante mencionar que el campo \texttt{coherence} del método \texttt{top\_topics} admite las métricas denominadas: \texttt{u\_mass}, \texttt{c\_v}, \texttt{c\_uci} y \texttt{c\_npmi}. De estas, la única que se pudo implementar sin problemas fue \texttt{u\_mass}, el resto arrojaba un error de \texttt{Python} tipo \texttt{Broken Pipe} que no pudo ser solucionado en este proyecto.
 	
 	\subsubsection{Primera iteración}
-	 En la Figura \ref{fig: boric0_informe} se muestra el output de pedirle los tópicos al modelo. En esta primera iteración no estamos filtrando palabras de baja frecuencia y los hiperparámetros $(\alpha, \eta)$ se dejan en default y pedimos $5$ tópicos. 
+	 En la Figura \ref{fig: boric0_informe} se muestra el output de pedirle los tópicos a \texttt{gensim}. En esta primera iteración no estamos filtrando palabras de baja frecuencia y los hiperparámetros $(\alpha, \eta)$ se dejan como $(\texttt{auto}, \texttt{auto})$ y pedimos $5$ tópicos. 
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=.4]{../imgs/boric0_informe.png}
+		\includegraphics[scale=.32]{../imgs/boric0_informe.png}
 		\caption{Los tópicos están ordenados por coherencia y los números que aparecen al lado de cada palabra corresponde a la probabilidad de tal palabra en el tópico. Notar que sólo se muestran las $10$ palabras con mayor probabilidad dentro del tópico, y dado el tamaño de $V$ en este experimento, tales probabilidades son relativamente pequeñas. La coherencia promedio de los tópicos de esta imagen es $-9.1$.}
 		\label{fig: boric0_informe}
 	\end{figure}
 
 	\subsubsection{Segunda iteración}
-	Lo que corresponde ahora es optimizar la coherencia promedio con respecto a $(\alpha, \eta)$ y \texttt{num\_topics}. En la primera aproximación a esta tarea calculamos la \texttt{u\_mass} sobre la grilla $\set{5,6,7,8,9,10}\times\set{\texttt{auto}, 0.5}\times\set{\texttt{auto}, 0.5}$ lo cual nos genera $24$ puntos, ver Figura \ref{fig: param_optimization0_informe}.
+	Lo que corresponde ahora es optimizar la coherencia promedio de los tópicos con respecto a $(\alpha, \eta)$ y \texttt{num\_topics}. En la primera aproximación a esta tarea calculamos la \texttt{u\_mass} sobre la grilla $\set{5,6,7,8,9,10}\times\set{\texttt{auto}, 0.5}\times\set{\texttt{auto}, 0.5}$ lo cual nos genera $24$ puntos, ver Figura \ref{fig: param_optimization0_informe}.
 	
-	 \begin{figure}[H]
-	 	\centering
-	 	\includegraphics[scale=.4]{../imgs/param_optimization0_informe.png}
-	 	\caption{Coherencia por cada combinación de parámetros. Las tuplas del eje $x$ son de la forma $(\texttt{num\_topics}, \alpha, \eta)$.}
-	 	\label{fig: param_optimization0_informe}
-	 \end{figure}
+	
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat[]{
+			\begin{minipage}{0.45\textwidth}
+				\label{fig: param_optimization0_informe}
+				\centering
+				\includegraphics[width=\textwidth]{../imgs/param_optimization0_informe.png}
+			\end{minipage}
+		}
+		\subfloat[]{
+			\begin{minipage}{0.45\textwidth}
+				\centering
+				\label{fig: param_optimization2_informe}
+				\includegraphics[width=\textwidth]{../imgs/param_optimization2_informe.png}
+			\end{minipage}
+		}
+		\caption{Coherencia por cada combinación de parámetros. Las tuplas del eje $x$ son de la forma $(\texttt{num\_topics}, \alpha, \eta)$. Recordar que esta métrica es tal que mientras más cercana a $0$ mejor. (a) corresponde a la segunda iteración y (b) a la tercera.}
+	\end{figure}
  	
- 	De la Figura \ref{fig: param_optimization0_informe} deducimos que la cantidad de tópicos escogidos es relevante y que mientras menos tópicos fijamos, más será la coherencia promedio. Es por esto que se decide fijar esta variable a $5$ de aquí en adelante. Otra observación es que para número de tópicos fijos $n$, las mejores combinaciones son $(n, 0.5, \texttt{auto})$ y $(n, 0.5, 0.5)$.  
+ 	De la Figura \ref{fig: param_optimization0_informe} deducimos que la cantidad de tópicos escogidos es relevante y que mientras menos tópicos fijamos, más será la coherencia promedio. Es por esto que se decide fijar esta variable a $5$ de aquí en adelante. Otra observación es que para número de tópicos fijos $n\in\set{5,6,7,8,9,10}$, las mejores combinaciones son $(n, 0.5, \texttt{auto})$ y $(n, 0.5, 0.5)$. El mejor modelo en esta iteración es $(\texttt{num\_topics}=5,\alpha= 0.5, \eta=\texttt{auto})$ con coherencia de $-8.15$.
+ 	
+ 	\subsubsection{Tercera iteración}
+	Dado que fijamos el número de tópicos en $5$, en esta iteración nos preocupamos solamente de optimizar con respecto a $(\alpha, \eta)$. Primero vamos a comparar entre fijar los parámetros como sólo números y fijar al menos uno de estos como \texttt{auto}, \texttt{symmetric} o \texttt{asymmetric}, para esto experimentamos con $(\alpha, \eta)\in\set{0.5, 1,\texttt{auto}, \texttt{symmetric}}^2$. Como los máximos en la Figura \ref{fig: param_optimization2_informe} son alcanzados cuando tanto $\alpha$ como $\eta$ son números, se decide trabajar ambas variables de esta forma. Además, pareciera que mientras más grande sean estos números, mejor es la coherencia, en este caso el máximo se alcanza cuando ambos valores son iguales a $1$ que es lo más alto que se usó.
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat[]{
+			\begin{minipage}{0.45\textwidth}
+				\label{fig: param_optimization3_informe}
+				\centering
+				\includegraphics[width=\textwidth]{../imgs/param_optimization3_informe.png}
+			\end{minipage}
+		}
+		\subfloat[]{
+			\begin{minipage}{0.45\textwidth}
+				\centering
+				\label{fig: boric3_informe}
+				\includegraphics[width=\textwidth, height=4cm]{../imgs/boric3_informe.png}
+			\end{minipage}
+		}
+		\caption{Coherencia (a) y tópicos asociados a los mejores parámetros encontrados (b).}
+	\end{figure}
+	 
+	
+	En la Figure \ref{fig: param_optimization3_informe} se tomó $(\alpha, \eta)\in\set{1.5, 2, 2.5, 3}^2$ y confirma que si usamos valores más altos para $\alpha$ y $\eta$ la coherencia aumenta, pero hasta cierto punto porque el crecimiento se detiene cuando ambos llegan a $3$. Los mejores parámetros de esta iteración son $(\texttt{num\_topics}=5,\alpha=2.5, \eta=2)$ con una coherencia promedio de $-4.86$. La mala noticia acá es que los tópicos, representados por las $10$ palabras más probables, son prácticamente los mismos (ver Figura \ref{fig: boric3_informe}) y comparten varias palabras. Esto se puede explicar teniendo en cuenta que los tweets son de una persona en particular, que además viene de un ámbito mayoritariamente político, y por consiguiente sus tweets tienen esta misma connotación.
+	
+	
+	\subsubsection{Cuarta iteración (cambio de data set)}
+	Dado lo discutido en la parte anterior, se decide aplicar los métodos anteriores a otro data set. Este data set consiste en tweets creados en Santiago durante un periodo de ocho días, en específico, del $3$ de enero de $2021$ hasta el $10$ del mismo mes y año. Por lo tanto, se espera haya una cantidad más variada de temas y palabras con respecto a los resultados anteriores. El procedimiento es el mismo de la iteración pasada, se preprocesan los tweets y se optimiza la coherencia promedio con respecto a $(\alpha, \eta)$ fijando $\texttt{num\_topics}=5$ por simpleza. La única diferencia es que en este caso se filtrarán (quitándo) las palabras que estén presentes en menos de $100$ tweets luego del preprocesamiento, esto nos llevó a reducir el vocabulario de $80920$ a $656$ palabras.  
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat[]{
+			\begin{minipage}{0.45\textwidth}
+				\label{fig: mix_param_optimization0_informe}
+				\centering
+				\includegraphics[width=\textwidth]{../imgs/mix_param_optimization0_informe.png}
+			\end{minipage}
+		}
+		\subfloat[]{
+			\begin{minipage}{0.45\textwidth}
+				\centering
+				\label{fig: mix0_informe}
+				\includegraphics[width=\textwidth]{../imgs/mix0_informe.png}
+			\end{minipage}
+		}
+		\caption{Coherencia (a) y tópicos asociados a los mejores parámetros encontrados (b).}
+	\end{figure}
 
+	En la Figura \ref{fig: mix_param_optimization0_informe} se usó $(\alpha,\eta)\in\set{\texttt{auto}, \texttt{symmetric}, 1, 2, 3}^2$ y los mejores parámetros resultaron $(\alpha=\texttt{symmetric},\eta=3)$ con una coherencia igual a $-8.6$. En la Figura \ref{fig: mix0_informe} podemos ver una mayor diversidad de palabras, incluso el tópico $0$, que tiene la coherencia más alta igual a $-4.6$, tiene un carácter positivo en cuanto a sus primeras $4$ palabras con mayor probabilidad. El tópico $1$, al estar presenta el par \textbf{accidente vehicular}, podemos concluir que nos esta hablando justamente de situaciones de accidentes. El resto de los tópicos no tienen un carácter bien definido salvo por el $4$, este nos está hablando, quizá con un poco menos de seguridad, de publicaciones de fotos.  
+	
+	
+\section{Conclusión}
+	
+	Claramente, la decisión de analizar sólo una cuenta para así disminuir la complejidad de la cantidad de tópicos, no fue la más acertada. Si bien la optimización de los parámetros conllevó un aumento significativo en la coherencia, los tópicos de la cuenta \texttt{@gabrielboric} tendieron a ser muy parecidos pudiendo ser caracterizados como \comillas{Política y Educación}. Un análisis más profundo lleva a pensar que se cumple la hipótesis de que los temas de esta cuenta estarían ligados a la política, pero, es tan así que este pareciera ser el único tema que se discute en el data set.\\
+	
+	Cuando se pasa a analizar todos los tweets creados en Santiago durante un periodo de tiempo, somos capaces de encontrar más palabras y los tópicos rara vez se sobreponen entre si, pero cuesta darle una interpretación a los tópicos en base a sus palabras de mayor probabilidad. Esto lo podemos explicar por la naturaleza \textbf{unsupervised learning} del modelo, puesto que no tenemos nuestro tweets o palabras clasificadas en ciertos tópicos predeterminados y el algoritmo trata por si sólo de encontrar y generar estos tópicos, que como vemos no siempre son interpretables. Además, se concluye que la métrica de coherencia por sí sola no es suficiente, se hace necesario un humano/a para poder encasillar e interpretar los tópicos que nos entrega LDA.\\
+	
+	En resumen, se logra optimizar de buena forma la métrica impuesta pero no así la del ojo humano. El modelo no es tan robusto al análisis que una persona hace sobre los tópicos. Para expandir este proyecto se podría trabajar con tweets de diferentes cuentas que se sepa de ante mano que tocan temas distintos entre si y tratar de capturarlos, otra cosa que se podría hacer es un preprocesamiento más fino o tratar de unir tweets para no tener textos tan cortos.
+	   
 \input{biblio}
 \end{document}
