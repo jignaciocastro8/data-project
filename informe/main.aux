@@ -27,7 +27,7 @@
 \newlabel{sub@fig: twint_example1_informe}{{(a)}{a}{Subfigure 1a\relax }{subfigure.1.1}{}}
 \newlabel{fig: twint_example2_informe}{{1b}{1}{Subfigure 1b}{subfigure.1.2}{}}
 \newlabel{sub@fig: twint_example2_informe}{{(b)}{b}{Subfigure 1b\relax }{subfigure.1.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces A la izquierda se buscan y guardan tweets creados al rededor de Santiago entre las fechas \texttt  {since} y \texttt  {until} que además contengan la palabra \texttt  {word}. A la derecha se obtienen y guardan los tweets de la cuenta \texttt  {id}. \textbf  {Scrapping tweets} es la expresión en inglés para este proceso.\relax }}{1}{figure.caption.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces A la izquierda se buscan y guardan tweets creados al rededor de Santiago entre las fechas \texttt  {since} y \texttt  {until} que además contengan la palabra \texttt  {word}. A la derecha se obtienen y guardan los tweets de la cuenta \texttt  {id}. En inglés este proceso se denomina \textbf  {scrapping tweets}\relax }}{1}{figure.caption.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{1}{subfigure.1.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{1}{subfigure.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Wordclouds}{2}{subsection.2.1}\protected@file@percent }
@@ -55,51 +55,52 @@
 \citation{LDA10}
 \citation{coherence}
 \citation{coherence2}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Datos}{4}{subsection.3.1}\protected@file@percent }
+\newlabel{eq: umass}{{1}{4}{Latent Dirichlet Allocation aplicado a datos de Twitter}{equation.3.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Datos y Desarrollo del Modelo}{5}{section.4}\protected@file@percent }
 \newlabel{fig: boric_tweet_año}{{4a}{5}{Subfigure 4a}{subfigure.4.1}{}}
 \newlabel{sub@fig: boric_tweet_año}{{(a)}{a}{Subfigure 4a\relax }{subfigure.4.1}{}}
 \newlabel{fig: tabla_boric}{{4b}{5}{Subfigure 4b}{subfigure.4.2}{}}
 \newlabel{sub@fig: tabla_boric}{{(b)}{b}{Subfigure 4b\relax }{subfigure.4.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Tweets por año (a) y estadísticas de la cantidad diaria de tweets (b).\relax }}{5}{figure.caption.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Tweets por año (a) y el total de tweets junto a estadísticas de la cantidad diaria de tweets (b).\relax }}{5}{figure.caption.4}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{5}{subfigure.4.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{5}{subfigure.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Limpieza y preprocesamiento de datos}{5}{subsection.3.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Tamaño del diccionario en función de la cantidad de tweets mínima a la que las palabras deben permanecer. Es decir, $y$ corresponde a las palabras que resultan al filtrar las que aparezcan en menos de $x$ tweets. Este gráfico es importante porque nos permite ver con que tanto vocabulario nos quedamos cuando eliminamos palabras sin mucha importancia o para el modelo.\relax }}{5}{figure.caption.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Limpieza y preprocesamiento de datos}{5}{subsection.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Tamaño del diccionario en función de la cantidad de tweets mínima a la que las palabras deben permanecer. Es decir, $y$ corresponde a las palabras que resultan al filtrar las que aparezcan en menos de $x$ tweets. Este gráfico es importante porque nos permite ver con que tanto vocabulario nos quedamos cuando eliminamos palabras sin mucha importancia o para el modelo.\relax }}{6}{figure.caption.5}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Estado final de dos tweets escogidos al azar. Esta representación se conoce como ``bow'' (\textbf  {bag of words}).\relax }}{6}{figure.caption.6}\protected@file@percent }
 \newlabel{fig: bow_example}{{6}{6}{Estado final de dos tweets escogidos al azar. Esta representación se conoce como \comillas {bow} (\textbf {bag of words}).\relax }{figure.caption.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Aplicando el modelo}{6}{subsection.3.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \texttt  {corpus} corresponde a lo mostrado en la Figura \ref  {fig: bow_example}, \texttt  {id2word} es nuestro vocabulario $V$, \texttt  {alpha} y \texttt  {eta} son los priors discutidos previamente, \texttt  {num\_topics} es la cantidad de tópicos que estamos buscando y \texttt  {random\_state} es la semilla del algoritmo que en los experimentos siempre fue $1$. El método \texttt  {top\_topics} permite obtener coherencia de cada tópico.\relax }}{6}{figure.caption.7}\protected@file@percent }
-\newlabel{fig: gensim_code_informe}{{7}{6}{\texttt {corpus} corresponde a lo mostrado en la Figura \ref {fig: bow_example}, \texttt {id2word} es nuestro vocabulario $V$, \texttt {alpha} y \texttt {eta} son los priors discutidos previamente, \texttt {num\_topics} es la cantidad de tópicos que estamos buscando y \texttt {random\_state} es la semilla del algoritmo que en los experimentos siempre fue $1$. El método \texttt {top\_topics} permite obtener coherencia de cada tópico.\relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Primera iteración}{7}{subsubsection.3.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Aplicando el modelo}{6}{subsection.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \texttt  {corpus} corresponde a lo mostrado en la Figura \ref  {fig: bow_example}, \texttt  {id2word} es nuestro vocabulario $V$, \texttt  {alpha} y \texttt  {eta} son los priors discutidos previamente, \texttt  {num\_topics} es la cantidad de tópicos que estamos buscando y \texttt  {random\_state} es la semilla del algoritmo que en los experimentos siempre fue $1$. El método \texttt  {top\_topics} permite obtener coherencia y las distribuciones de cada tópico sobre las palabras.\relax }}{7}{figure.caption.7}\protected@file@percent }
+\newlabel{fig: gensim_code_informe}{{7}{7}{\texttt {corpus} corresponde a lo mostrado en la Figura \ref {fig: bow_example}, \texttt {id2word} es nuestro vocabulario $V$, \texttt {alpha} y \texttt {eta} son los priors discutidos previamente, \texttt {num\_topics} es la cantidad de tópicos que estamos buscando y \texttt {random\_state} es la semilla del algoritmo que en los experimentos siempre fue $1$. El método \texttt {top\_topics} permite obtener coherencia y las distribuciones de cada tópico sobre las palabras.\relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Primera iteración}{7}{subsubsection.4.2.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Los tópicos están ordenados por coherencia y los números que aparecen al lado de cada palabra corresponde a la probabilidad de tal palabra en el tópico. Notar que sólo se muestran las $10$ palabras con mayor probabilidad dentro del tópico, y dado el tamaño de $V$ en este experimento, tales probabilidades son relativamente pequeñas. La coherencia promedio de los tópicos de esta imagen es $-9.1$.\relax }}{7}{figure.caption.8}\protected@file@percent }
 \newlabel{fig: boric0_informe}{{8}{7}{Los tópicos están ordenados por coherencia y los números que aparecen al lado de cada palabra corresponde a la probabilidad de tal palabra en el tópico. Notar que sólo se muestran las $10$ palabras con mayor probabilidad dentro del tópico, y dado el tamaño de $V$ en este experimento, tales probabilidades son relativamente pequeñas. La coherencia promedio de los tópicos de esta imagen es $-9.1$.\relax }{figure.caption.8}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Segunda iteración}{7}{subsubsection.3.3.2}\protected@file@percent }
-\newlabel{fig: param_optimization0_informe}{{9a}{7}{Subfigure 9a}{subfigure.9.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Segunda iteración}{7}{subsubsection.4.2.2}\protected@file@percent }
+\newlabel{fig: param_optimization0_informe}{{9a}{8}{Subfigure 9a}{subfigure.9.1}{}}
 \newlabel{sub@fig: param_optimization0_informe}{{(a)}{a}{Subfigure 9a\relax }{subfigure.9.1}{}}
-\newlabel{fig: param_optimization2_informe}{{9b}{7}{Subfigure 9b}{subfigure.9.2}{}}
+\newlabel{fig: param_optimization2_informe}{{9b}{8}{Subfigure 9b}{subfigure.9.2}{}}
 \newlabel{sub@fig: param_optimization2_informe}{{(b)}{b}{Subfigure 9b\relax }{subfigure.9.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Coherencia por cada combinación de parámetros. Las tuplas del eje $x$ son de la forma $(\texttt  {num\_topics}, \alpha , \eta )$. Recordar que esta métrica es tal que mientras más cercana a $0$ mejor. (a) corresponde a la segunda iteración y (b) a la tercera.\relax }}{7}{figure.caption.9}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{7}{subfigure.9.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{7}{subfigure.9.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Tercera iteración}{8}{subsubsection.3.3.3}\protected@file@percent }
-\newlabel{fig: param_optimization3_informe}{{10a}{8}{Subfigure 10a}{subfigure.10.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Coherencia por cada combinación de parámetros. Las tuplas del eje $x$ son de la forma $(\texttt  {num\_topics}, \alpha , \eta )$. Recordar que esta métrica es tal que mientras más cercana a $0$ mejor. (a) corresponde a la segunda iteración y (b) a la tercera.\relax }}{8}{figure.caption.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{8}{subfigure.9.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{8}{subfigure.9.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Tercera iteración}{8}{subsubsection.4.2.3}\protected@file@percent }
+\newlabel{fig: param_optimization3_informe}{{10a}{9}{Subfigure 10a}{subfigure.10.1}{}}
 \newlabel{sub@fig: param_optimization3_informe}{{(a)}{a}{Subfigure 10a\relax }{subfigure.10.1}{}}
-\newlabel{fig: boric3_informe}{{10b}{8}{Subfigure 10b}{subfigure.10.2}{}}
+\newlabel{fig: boric3_informe}{{10b}{9}{Subfigure 10b}{subfigure.10.2}{}}
 \newlabel{sub@fig: boric3_informe}{{(b)}{b}{Subfigure 10b\relax }{subfigure.10.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Coherencia (a) y tópicos asociados a los mejores parámetros encontrados (b).\relax }}{8}{figure.caption.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{8}{subfigure.10.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{8}{subfigure.10.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4}Cuarta iteración (cambio de data set)}{8}{subsubsection.3.3.4}\protected@file@percent }
-\bibcite{LDA03}{1}
-\newlabel{fig: mix_param_optimization0_informe}{{11a}{9}{Subfigure 11a}{subfigure.11.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Coherencia (a) y tópicos asociados a los mejores parámetros encontrados (b).\relax }}{9}{figure.caption.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{9}{subfigure.10.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{9}{subfigure.10.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4}Cuarta iteración (cambio de data set)}{9}{subsubsection.4.2.4}\protected@file@percent }
+\newlabel{fig: mix_param_optimization0_informe}{{11a}{10}{Subfigure 11a}{subfigure.11.1}{}}
 \newlabel{sub@fig: mix_param_optimization0_informe}{{(a)}{a}{Subfigure 11a\relax }{subfigure.11.1}{}}
-\newlabel{fig: mix0_informe}{{11b}{9}{Subfigure 11b}{subfigure.11.2}{}}
+\newlabel{fig: mix0_informe}{{11b}{10}{Subfigure 11b}{subfigure.11.2}{}}
 \newlabel{sub@fig: mix0_informe}{{(b)}{b}{Subfigure 11b\relax }{subfigure.11.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Coherencia (a) y tópicos asociados a los mejores parámetros encontrados (b).\relax }}{9}{figure.caption.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{9}{subfigure.11.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{9}{subfigure.11.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusión}{9}{section.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Coherencia (a) y tópicos asociados a los mejores parámetros encontrados (b).\relax }}{10}{figure.caption.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{10}{subfigure.11.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{10}{subfigure.11.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusión}{10}{section.5}\protected@file@percent }
+\bibcite{LDA03}{1}
 \bibcite{LDA10}{2}
 \bibcite{coherence}{3}
 \bibcite{coherence2}{4}
-\gdef \@abspage@last{11}
+\gdef \@abspage@last{12}
